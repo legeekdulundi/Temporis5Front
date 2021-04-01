@@ -159,7 +159,7 @@ nav
 .Logo-container{
   display: flex;
   flex-direction: column;
-  position :absolute;
+  position :fixed;
   top:0;
   left:0;
   background-color: #262626;
@@ -314,6 +314,62 @@ nav
   font-family: 'Quicksand';
   font-size: 0.8vw;
 }
-/* .data-craft-containeure{
 
-} */
+#containeur-all_data{
+  display:flex;
+  flex-direction: column;
+  background-color: #898989;
+  width: 83.7%;
+  /* height: 200%; */
+  margin-left: 16.7%;
+  margin-top: 6.85%;
+
+}
+.porteur-all-data-craft{
+  display:flex;
+  flex-direction: raw;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  background-color: #3b1080;
+  border-radius: 15px 25px 25px 15px;
+}
+.data-craft-containeure{
+  display:flex;
+  align-items :center;
+  background-color: #565656;
+  width: 95%;
+  border-radius: 10px;
+  justify-content:center;
+}
+.edit-supp-xontaineur{
+  display:flex;
+  flex-direction: column;
+  margin-left: 1.5%;
+}
+.edit-craft{
+  color:#FFFFFF;
+  font-size: 1vw;
+}
+.input-data-craft{
+  width:10%;
+  height: 20%;
+  outline: none;
+  outline:none;
+}
+.plusse{
+  color:#FFFFFF;
+}
+.egalee{
+  color:#FFFFFF;
+}
+.Photo-items{
+  background: url("./image/1001.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width:8%;
+  height: 100%;
+  background-size: cover;
+  margin-left: 5%;
+}
+
