@@ -111,6 +111,16 @@
   backdrop-filter: blur(100px);
   font-family: 'Quicksand';
 }
+.autocomplete{
+  width: 50%;
+  height: 15%;
+  
+}
+
+.inputAuto
+{
+  justify-content: center;
+}
 .operator-style{
   font-size: 1.5vw;
   margin-left : 1%;
