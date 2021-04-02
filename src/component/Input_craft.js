@@ -4,7 +4,7 @@ const InputCraft = () => {
   const Show = ()=>{
       let Liste_items =[]
       for (let i=0;i<5;i++){
-          i !== 4 ? Liste_items.push(<><UseAutocomplete/><div className="operator-style">+</div></>) : Liste_items.push(<UseAutocomplete/>)
+          i !== 4 ? Liste_items.push(<><UseAutocomplete id={i}/><div className="operator-style">+</div></>) : Liste_items.push(<UseAutocomplete/>)
       }
       return Liste_items
   }

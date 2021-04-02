@@ -111,7 +111,9 @@
   backdrop-filter: blur(100px);
   font-family: 'Quicksand';
 }
-
+.testDiv{
+  width: 100%;
+}
 
 .operator-style{
   font-size: 1.5vw;
