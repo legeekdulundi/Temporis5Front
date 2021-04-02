@@ -1,8 +1,8 @@
 const NavBar = () => {
     return (
         <nav >
-            <input className="input-navBare" placeholder="Recherche items"></input>
-            <button className="button-navBare" >Recherche</button>
+            <input className="input" id="recherche-craft-by-items" placeholder="Recherche items"></input>
+            <input className="input-button" placeholder="Recherche" type="submit" style={{"width":"7%", "height":"45%", "background-color": "#262626", "border":"none"}}/>
         </nav>
     )
 }

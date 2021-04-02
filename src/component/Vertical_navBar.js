@@ -1,24 +1,22 @@
 import {Link} from "react-router-dom";
-import Db from "../component/Db"
 
-const Vertical_navBar = () => {
+const VerticalNavBarre = () => {
     return (
-        <div className="Logo-container">
-            <Link  to="/" src="./image/imageLogo.png" className="logo-navBar"></Link>
-            <div className="trait" id="trait0"></div>
-            <h1 id="titre-recherche-carte">Recherche carte</h1>
-            <input className="input-recherche-carte" placeholder="Recherche carte"></input>
-            <div className="trait" id="trait1"></div>
-            <div id="Add-carte">
-                <h1 id="titre-ajout-carte">Ajout Carte</h1>
-                <div style={{display:"flex"}}>
-                    <input id="input-add-craft" placeholder="Nom nouvelle carte"></input>
-                    <button id="button-sub-add-craft">Ajoutée</button>
+        <div className="nav-vertical-containeure">
+            <Link  to="/" src="./image/imageLogo.png" className="logo" id="logo-navBar"></Link>
+            <div className="contenant-add-recherche-cart">
+                <h1 className="titre-verticalNav">Recherche carte</h1>
+                <input className="input" id="input-add-craft" placeholder="Recherche carte" style={{"margin-bottom" : "25%"}}/>
+                <div style={{"display": "flex", "flex-direction": "column"}}>
+                    <h1 className="titre-verticalNav">Ajout Carte</h1>
+                    <div style={{display:"flex"}}>
+                        <input className="input" id="input-add-craft" placeholder="Nom nouvelle carte"/>
+                        <input className="input-button" type="submit" placeholder="Ajoutée"/>
+                    </div>
                 </div>
             </div>
-            <Db/>
         </div>
     )
 }
 
-export default Vertical_navBar
+export default VerticalNavBarre

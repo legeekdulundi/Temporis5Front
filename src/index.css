@@ -12,10 +12,10 @@
 .Menu{
   position: relative;
   width: 70%;
-  height: 55%;
+  height: 59%;
   left: 15%;
   top: 15%;
-  background-color: #ffff;
+  background-color: #FFFFFF;
   background: radial-gradient(50% 50% at 50% 50%, #7D0080 0%, rgba(255, 255, 255, 0) 100%), rgba(253, 253, 253, 0.01);
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
@@ -30,19 +30,36 @@
   background: url("./image/imageLogo.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  /* flex-grow: 1; */
-  margin-left: 40%;
-  margin-top:2%;
+  margin :2% 0% 0% 40%;
 }
-.button-container{
+.flex-clounm-center{
   display : flex;
   flex-direction: column;
+  align-items: center;
+}
+#button-container{
   width: 45%;
   height: 50%;
   margin-top: 11%;
   margin-left: 26.5%;
-  align-items: center;
-  /* background-color: #FFFFFF; */
+}
+#button-craft{
+  width: 20%;
+  height: 25%;
+  left: calc(50% - 234px/2 - 0.48px);
+  top: calc(50% - 80px/2 - 76px);
+}
+#button-recherche{
+  width: 35%;
+  height: 25%;
+  left: calc(50% - 353px/2 + 0.02px);
+  top: calc(50% - 80px/2 + 19px);
+}
+#button-Base-donner{
+  width: 55%;
+  height: 25%;
+  left: calc(50% - 451px/2 - 0.98px);
+  top: calc(50% - 80px/2 + 114px);
 }
 .button-menu{
   font-family: 'Quicksand';
@@ -64,34 +81,26 @@
 .button-menu:hover{
   background-color: #660074;
 }
-
 /*Craft Page*/
-
 /*Craft input carte*/
 .menu-craft{
   display : flex;
   flex-direction: column;
-
   width : 225%;
-  /* text-align:center;
-  justify-content: center; */
   margin-top : 1%;
   margin-bottom : 2%;
   margin-right: 10%;
   text-align:center;
-/* 
-  background-color: #df0303; */
 }
 .container-input-craft{
   display:flex;
   flex-direction: raw;
-  width : 100%;
   align-items: center;
   justify-content: center;
+  width : 100%;
   width:105%;
-  /* background-color: #FFFFFF; */
 }
-.input-craft-carte{
+.input{
   outline:none;
   width: 14%;
   height: 115%;
@@ -100,45 +109,21 @@
   font-size: 0.85vw;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(100px);
-  text-align: center;
+  font-family: 'Quicksand';
 }
-.plus{
+.operator-style{
   font-size: 1.5vw;
   margin-left : 1%;
   margin-right : 1%;
   color:#FFFFFF;
 }
-.equal{
-  font-size: 2vw;
-  margin-left: 5%;
-  color:#FFFFFF;
-}
-.input-craft-items{
+#input-items{
   align-self: center;
-  outline:none;
-  width: 19%;
-  height: 115%;
-  border-radius: 15px;
-  font-size: 1.25vw;
-  padding-left: 0.5%;
-  padding-top: 0.4%;
-  padding-bottom: 0.3%;
+  font-size: 1.15vw;
+  padding:  0.4% 0.3% 0.5% 0;
   margin-left: 5%;
-  text-align: center;
-  font-family: 'Quicksand';
-  color : #FFFFFF;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(100px);
-  border: solid 1.5px ;
-  border: linear-gradient(100deg, #FFFFFF 0%, rgba(0, 0, 0, 0) 100%);
-  text-decoration: none;
-  opacity: 0.8;
+  width: 15%;
 }
-
-
-
-
-
 /*Db Page*/
 /*Nav bar*/
 nav
@@ -147,16 +132,16 @@ nav
   position: fixed;
   justify-content:center;
   align-items:center;
+  z-index: 1;
   top: 0;
   right:0;
   width: 83%;
   height: 8.5%;
-  padding-top: 1.3%;
-  padding-bottom: 1.3%;
+  padding: 1.3% 0% 1.3% 0%;
   background: url("./image/galaxie.jpg");
-  /* background-color: #262626; */
+  border-radius: 0 0 25px 0;
 }
-.Logo-container{
+.nav-vertical-containeure{
   display: flex;
   flex-direction: column;
   position :fixed;
@@ -165,172 +150,80 @@ nav
   background-color: #262626;
   width: 17%;
   height: 100%;
-  z-index : 1;
 }
-.logo-navBar{
-  position :absolute;
-  z-index : 1;
+#logo-navBar{
+  position :relative;
   width: 60%;
-  height: 12%;
-  background: url("./image/imageLogo.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-size: cover;
+  height: 12.5%;
   top:0;
   left:0;
-  margin-left: 18%;
-  margin-top: 1.2%;
+  margin : 1.2% 0% 5.7% 18%;
 }
-
-.input-navBare{
+#recherche-craft-by-items{
   width: 30%;
-  outline:none;
-  border-radius: 1%;
   height: 40%;
-  font-size: 1.25vw;
-  font-family: 'Quicksand';
-  color : white;
-  text-decoration: none;
-  border-radius: 15px;
   background-color: #262626;
   padding-left: 12px;
-  border: solid;
-  border-width: 2px;
-  border-color: #7D0080 ;
-  margin-right: 1.1%;
+  color :#ffffffff;
+  margin-right: 1.1%; 
+  text-align: left;
 }
-.input-navBare:hover:focus{
+#recherche-craft-by-items:hover{
   background-color: #333333;
 }
-.button-navBare{
-  height: 50%;
-  font-size: 1.1vw;
-  text-align:center;
-  border-radius: 15px;
-  outline-style: none;
-  text-decoration: none;
-  color : white;
-  background-color: #262626;
-  border: solid;
-  border-width: 2px;
-  border-color: #7D0080 ;
-  font-family: 'Quicksand';
-}
-.button-navBare:hover{
-  background-color: #4c4c4c;
-}
-.trait{
-  position: static;
-  position :absolute;
-  z-index : 1;
+.contenant-add-recherche-cart{
   width:95%;
-  height: 0px;
-  margin-left: 2.5%;
+  height: 81%;
   border-bottom: 2px solid #4c4c4c;
+  border-top: 2px solid #4c4c4c;
+  margin: 0% 0% 0% 2.5%;
 }
-#trait0{
-  margin-top: 42%;
-}
-.input-recherche-carte{
-  width:75%;
-  height: 2.8%;
-  /* margin-top: 50%; */
-  border-radius: 15px;
-  background-color: #333333;
-  outline:none;
-  border: solid;
-  border-width: 2px;
-  border-color: #404040 ;
-  color:#FFFFFF;
-  margin-left: 2%;
-  padding-left: 11px;
-  font-size: 1vw;
-}
-.input-recherche-carte:hover:focus{
-  background-color: #4c4c4c;
-}
-#trait1{
-  margin-top: 275%;
-}
-#Add-carte{
-  display: flex;
-  flex-direction: column;
-  width:100%;
-  height: 20%;
-  margin-top: 35%;
-  margin-left: 2.5%;
-}
-#titre-recherche-carte{
+.titre-verticalNav{
   font-family: 'Quicksand';
   color:#707070;
   font-size: 1.8vw;
-  margin-top: 55%;
-  margin-left: 2%;
-}
-#titre-ajout-carte{
-  font-family: 'Quicksand';
-  color:#707070;
-  font-size: 1.8vw;
-}
-#button-sub-add-craft{
-  width: 22%;
-  font-family: 'Quicksand';
-  border-radius: 15px;
-  outline:none;
-  border: solid;
-  border-width: 2px;
-  border-color: #404040 ;
-  color:#7e7e7e;
-  background-color: #333333;
-  font-size: 0.75vw;
-}
-#button-sub-add-craft:hover{
-  background-color: #4c4c4c;
+  margin: 19% 0% 5.5% 0%;
 }
 #input-add-craft{
   width: 65%;
-  font-family: 'Quicksand';
-  margin-right: 3%;
+  height: 3%;
   border-radius: 15px;
-  outline:none;
-  border: solid;
-  border-width: 2px;
-  border-color: #404040 ;
+  text-align: left;
+  border: solid 2px #404040;
   color:#7e7e7e;
   background-color: #333333;
-  font-size: 0.9vw;
+  font-size: 1vw;
   padding-left :8px;
+  margin-right: 3%;
 }
 #input-add-craft:hover:active{
   background-color: #4c4c4c;
 }
-.Return-Home{
-  bottom: 0;
-  color:#707070;
-  position :absolute;
-  margin-left: 25%;
-  margin-bottom: 2.4%;
-  text-decoration: none;
-  font-family: 'Quicksand';
-  font-size: 0.8vw;
+.input-button{
+  width: 29%;
+  font-size: 1vw;
+  padding-left :8px;
+  border-radius: 15px;
+  border: solid 2px #404040;
+  outline :none;
+  color:#7e7e7e;
+  background-color: #333333;
 }
-
+.input-button:hover{
+  background-color: #4c4c4c;
+}
 #containeur-all_data{
   display:flex;
   flex-direction: column;
-  background-color: #898989;
   width: 83.7%;
-  /* height: 200%; */
-  margin-left: 16.7%;
-  margin-top: 6.85%;
-
+  background-color: #898989;
+  margin : 6.85% 0% 0% 16.7%;
 }
 .porteur-all-data-craft{
   display:flex;
   flex-direction: raw;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 2%;
+  width: 95%;
+  margin : 2% 0% 0% 4%;
   background-color: #3b1080;
   border-radius: 15px 25px 25px 15px;
 }
@@ -340,36 +233,25 @@ nav
   background-color: #565656;
   width: 95%;
   border-radius: 10px;
-  justify-content:center;
+  justify-content: center;
 }
-.edit-supp-xontaineur{
-  display:flex;
-  flex-direction: column;
-  margin-left: 1.5%;
-}
-.edit-craft{
-  color:#FFFFFF;
-  font-size: 1vw;
-}
-.input-data-craft{
-  width:10%;
+#input-task{
+  width: 11%;
+  border: solid 2px #404040;
+  color:#ffffffff;
+  background-color: #333333;
+  font-size: 0.8vw;
+  text-align: left;
+  padding-left :8px;
   height: 20%;
-  outline: none;
-  outline:none;
-}
-.plusse{
-  color:#FFFFFF;
-}
-.egalee{
-  color:#FFFFFF;
 }
 .Photo-items{
+
   background: url("./image/1001.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width:8%;
+  width:11%;
   height: 100%;
   background-size: cover;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 
