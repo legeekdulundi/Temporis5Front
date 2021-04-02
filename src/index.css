@@ -97,30 +97,22 @@
   flex-direction: raw;
   align-items: center;
   justify-content: center;
-  width : 100%;
-  width:105%;
+  width:100%;
+  margin-left: 2.2%;
 }
 .input{
   outline:none;
-  width: 14%;
-  height: 115%;
+  width: 15%;
+  height: 110%;
   border-radius: 15px;
   border: none;
-  font-size: 0.85vw;
+  font-size: 0.90vw;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(100px);
   font-family: 'Quicksand';
 }
-.autocomplete{
-  width: 50%;
-  height: 15%;
-  
-}
 
-.inputAuto
-{
-  justify-content: center;
-}
+
 .operator-style{
   font-size: 1.5vw;
   margin-left : 1%;
