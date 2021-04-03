@@ -9,7 +9,6 @@ const DBPage = () => {
             <NavBar/>
             <PanelData/>
         </>
-
     )
 }
 
