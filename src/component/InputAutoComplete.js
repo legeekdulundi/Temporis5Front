@@ -13,12 +13,15 @@ export default function UseAutocomplete(props) {
     clearOnBlur:false,
   });
 
+
+
+  // disabled:"disabled" 
   function FocusFct(e){e.target.style.borderRadius="10px 10px 0 0";}   
   function BlurFct(e){e.target.style.borderRadius="15px";}
   return (
     <div  style={{width:parseInt(props.width)+"%", marginLeft:props.marginLeft , marginRight:props.marginRight}} onBlur={BlurFct}>
       <div {...getRootProps()}>
-        <input className="input" {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder}/>
+        <input className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}  />
       </div>
       {groupedOptions.length > 0 ? (
         // style={{width:(parseInt(props.width)-3.8)+"%"}}

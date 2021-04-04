@@ -2,7 +2,18 @@ import InputCarte from "./InputAutoComplete"
 import { makeStyles } from '@material-ui/core/styles';
 const InputCraft = () => {
 
+
   const useStyles = makeStyles((theme) => ({
+    input:{
+      width: "100%",
+      maxHeight:'35px',
+      fontSize:"28px",
+      outline:"none",
+      borderRadius: "15px",
+      border: "none",
+      background:" rgba(255, 255, 255, 0.75)",
+      backdropFilter: "blur(100px)",
+    },
     listbox: {
       width: "100%",margin: 0,padding: 0,zIndex: 1,position: "absolute",listStyle: "none",overflow: "auto",maxHeight: 200,
       backgroundColor: 'rgba(255, 255, 255, 0.75)',
@@ -27,16 +38,21 @@ const InputCraft = () => {
   ];
   return (
     <>
-      <div style={{display:"flex"}}>
-        <InputCarte id={1} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 3.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <InputCarte id={2} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 3.2} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <InputCarte id={3} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 3.2} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <InputCarte id={4} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 3.2} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <InputCarte id={5} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 3.2} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+      <div style={{display:"flex",alignItems:"center"}}>
+        <InputCarte id={"InputCarte"+1} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
+        <InputCarte id={"InputCarte"+2} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
+        <InputCarte id={"InputCarte"+3} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
+        <InputCarte id={"InputCarte"+4} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
+        <InputCarte id={"InputCarte"+5} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
       </div>
       <br/>
-      <div className="operator-style" style={{"marginLeft": "5%", "fontSize":"2vw"}}>=</div>
-      < InputCarte id={6} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 1.4} marginLeft="42%" marginRight="1%" placeholder={"Item"}/>
+      <div className="operator-style-Home" style={{"fontSize":"2vw"}}>=</div>
+      < InputCarte id={6} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
+      {/* <button className="button-menu button-craft button-craft" onClick={ShowCraftMenu} >Craft</button> */}
     </>
       
 )}

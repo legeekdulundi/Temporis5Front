@@ -1,13 +1,11 @@
-import NavBar from "../component/NavBar"
 import VerticalNavBarre from "../component/Vertical_navBar"
-import PanelData from "../component/Panel_data"
+import ContainerRecette from "../component/ContainerRecette"
 
 const DBPage = () => {
     return (
         <>
             <VerticalNavBarre/>
-            <NavBar/>
-            <PanelData/>
+            <ContainerRecette/>
         </>
     )
 }
