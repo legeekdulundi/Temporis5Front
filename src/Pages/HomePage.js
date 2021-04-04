@@ -1,20 +1,55 @@
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import {Link} from "react-router-dom";
 import InputCraft from "../component/Input_craft"
-import Recherche from "../component/Recherche"
+import Recherche from "../component/ButtonRecherche"
 
-
-function HomePage() {
+function HomePage(props) {
   const [showAddCraft, setshowAddCraft] = useState(false)
   const [showRecherche, setshowRecherche] = useState(false)
-  
-  const ShowCraftMenu = ()=>{
+  const [ValueCraftButton, setValueCraftButton] = useState('Craft')
+
+  useEffect(() => {
+   
+    if(!showAddCraft)
+    {
+      console.log("--------------------------------------------")
+      console.log(document.getElementById("InputCarte1"))
+      if(document.getElementById("InputCarte1"))
+      {
+        console.log(document.getElementById("InputCarte1"))
+        
+      }
+      
+    //   {
+    //     {
+    //       "carte1":"CartePiou",
+    //       "carte2":"CarteKamas",
+    //       "carte3":"CarteBle",
+    //       "carte4":"CartePain",
+    //       "carte5":"CarteBouftou",
+    //     }
+    // }
+      //props.NewCraft()
+    }
+    return ""
+  }, [ValueCraftButton])
+  const ShowCraftMenu = (e)=>{
+    console.log(e.target.innerText)
+    //Verif Status
+    if(ValueCraftButton==="Craft")
+      setValueCraftButton('Envoyer')
+    else{
+      setValueCraftButton('Craft')
+    }
     setshowAddCraft(!showAddCraft)
     showRecherche && setshowRecherche(!showRecherche)
   }
   const ShowRechercheMenu = () =>{
-    setshowRecherche(!showRecherche)
-    showAddCraft && setshowAddCraft(!showAddCraft)
+    // setshowRecherche(!showRecherche)
+    
+    if(!showRecherche)
+      setshowRecherche(!showRecherche)
+    showAddCraft && setshowAddCraft(!showAddCraft); setValueCraftButton('Craft')
   }
  
   
@@ -22,15 +57,12 @@ function HomePage() {
       <div className="background">
         <div className="logo"></div>
         <menu className="Menu" >
-        {/* className="flex-clounm-center" id="button-container" */}
-          <div  className="flex-clounm-center" id="button-container" >
-            <button className="button-menu" id="button-craft" onClick={ShowCraftMenu} >Craft</button>
+          <div  className="flex-clounm-center" >
+            <button id="btnCraft" className="button-menu button-craft" onClick={ShowCraftMenu} style={{width:"15%"}}>{ValueCraftButton}</button>
             {showAddCraft && <InputCraft/> }
-            <br/>
-            <button className="button-menu" id="button-recherche" onClick={ShowRechercheMenu} >Recherche</button>
+            <button className="button-menu button-recherche" onClick={ShowRechercheMenu} >Recherche</button>
             {showRecherche && <Recherche/>}
-            <br/>
-            <Link to="/BDP" className="button-menu" id="button-Base-donner" >Base de donnée</Link>
+            <Link to="/BDP" className="button-menu button-Base-donner" style={{width:"30%"}}>Base de donnée</Link>
           </div>
         </menu>
       </div>
