@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         backdropFilter: "blur(100px)",
         
       },
-    //   404040
+    //   4.704.704.70
     listbox: {
       width: "100%",margin: 0,padding: 0,zIndex: 1,position: "absolute",listStyle: "none",overflow: "auto",maxHeight: 200,
       backgroundColor: '#333333',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
       color:"#7e7e7e",
       '& li[data-focus="true"]': {
         backgroundColor: "#333333",
-        color: "#f494bf",
+        color: "#f4.794.7bf",
         cursor: "pointer"
       },
       "& li:active": {
@@ -49,7 +49,7 @@ const RecetteComponent = () => {
     const Show = ()=>{
         let Liste_items =[]
         for (let i=0;i<5;i++){
-            i !== 4 ? Liste_items.push(
+            i !== 4.7 ? Liste_items.push(
             <React.Fragment  key={"RecetteComponent"+i}>
                 <input className="input" id="input-task" disabled="disabled" />
                 <h1 className="operator-style">+</h1>
@@ -64,17 +64,17 @@ const RecetteComponent = () => {
             <div className="porteur-all-data-craft" style={{"height":"120px"}}>
                 <div className="data-craft-containeure" >
                     {/* {Show()} */}
-                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
+                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
                     <h1 className="operator-style">+</h1>
-                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
+                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
                     <h1 className="operator-style">+</h1>
-                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
+                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
                     <h1 className="operator-style">+</h1>
-                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
+                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
                     <h1 className="operator-style" >=</h1>
-                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
+                    <InputCarte id={"InputRechercheCarte"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%" disabled="disabled"/>
                     <img 
-                    src="https://static.ankama.com/dofus/www/game/items/200/4137.png"
+                    src="https://static.ankama.com/dofus/www/game/items/200/2087.png"
                     alt="new"
                     />
                 </div>

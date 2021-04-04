@@ -20,12 +20,12 @@ const InputCraft = () => {
       borderRadius: "0 0 10px 10px",
       border: "1px solid rgba(0,0,0,.25)",
       '& li[data-focus="true"]': {
-        backgroundColor: "#4a8df6",
-        color: "white",
+        color: "#f494bf",
         cursor: "pointer"
       },
       "& li:active": {
-        backgroundColor: "#2977f5",
+        backgroundColor: "rgba(255, 255, 255, 0.75)",
+        backdropFilter: "blur(100px)",
         color: "white"
       }
     }
@@ -39,19 +39,19 @@ const InputCraft = () => {
   return (
     <>
       <div style={{display:"flex",alignItems:"center"}}>
-        <InputCarte id={"InputCarte"+1} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+1} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 4.7}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+2} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+2} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+3} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+3} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+4} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+4} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+5} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 5.5} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+5} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
       </div>
       <br/>
       <div className="operator-style-Home" style={{"fontSize":"2vw"}}>=</div>
-      < InputCarte id={6} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
+      < InputCarte id={"ItemCraft"} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
       {/* <button className="button-menu button-craft button-craft" onClick={ShowCraftMenu} >Craft</button> */}
     </>
       
