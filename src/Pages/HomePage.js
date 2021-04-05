@@ -80,13 +80,13 @@ function HomePage(props) {
   }
   function SpeedIncreas()
   {
-    if(document.getElementById("IdVideo")){document.getElementById("IdVideo").playbackRate=1.7;}
+    if(document.getElementById("IdVideo")){document.getElementById("IdVideo").playbackrate=1.7;}
   }
   return (
     <>
       {
         <>
-        <video id="IdVideo" autoPlay muted  playbackRate={3} className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://localhost:8888/GetVideo/" type="video/mp4"></source></video>
+        <video id="IdVideo" autoPlay muted  playbackrate={3} className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://localhost:8888/GetVideo/" type="video/mp4"></source></video>
     
         {
           SpeedIncreas()
