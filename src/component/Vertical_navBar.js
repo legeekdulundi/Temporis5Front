@@ -71,7 +71,7 @@ const VerticalNavBarre = (props) => {
                  <div style={{"display": "flex", "flexDirection": "column"}}>
                     <h1 className="titre-verticalNav">Recherche Carte</h1>
                     <div style={{display:"flex"}}>
-                        <InputCarte key={IdInputRecherche} id={"InputAddCarte1"} SubClass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="100%" widthList={50-1.7}  
+                        <InputCarte key={IdInputRecherche} id={"InputAddCarte1"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="100%" widthList={50-1.7}  
                         marginLeft="1%" marginRight="10%" placeholder=" carte"/>
                         <input id="ButtonRecherche" onClick={OnClickListenRecherche} className="input-button" type="submit" value={"Rechercher"} style={{width:"44%"}}/>
                     </div>
@@ -80,7 +80,7 @@ const VerticalNavBarre = (props) => {
                 <div style={{"display": "flex", "flexDirection": "column"}}>
                     <h1 className="titre-verticalNav">Ajout Carte</h1>
                     <div style={{display:"flex"}}>
-                        <InputCarte key={IdInput} id={"InputAddCarte2"} SubClass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="60%" widthList={60-1.3} 
+                        <InputCarte key={IdInput} id={"InputAddCarte2"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="60%" widthList={60-1.3} 
                          marginLeft="1%" marginRight="10%" placeholder=" carte"/>
                         <input id="ButtonAjout" onClick={OnClickListen} className="input-button" type="submit"  value={"Ajouter"}/>
                     </div>

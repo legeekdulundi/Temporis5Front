@@ -70,7 +70,7 @@ const ContainerRecette = (props) => {
         <div className="Bg-Bd">
             <nav>
                 <InputCarte key={KeyRecherche} id={"InputRechercheItem"} useStyles={useStyles()} Data={props.ListItem} width="30%" widthList={30-4.2}  
-                marginLeft="2.5%" marginRight="2%" placeholder="Recherche items" SubClass={"RechercheItemScrollBar"}/>
+                marginLeft="2.5%" marginRight="2%" placeholder="Recherche items" subclass={"RechercheItemScrollBar"}/>
                 <input onClick={RechercheItem} className="input-button Recherche-button" value={"Recherche"} type="submit" style={{"width":"9%"}}/>
             </nav>
             <div id="containeur-all_data">

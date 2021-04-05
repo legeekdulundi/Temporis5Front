@@ -36,19 +36,19 @@ const InputCraft = (props) => {
   return (
     <>
       <div style={{display:"flex",alignItems:"center"}}>
-        <InputCarte id={"InputCarte"+1} SubClass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+1} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+2} SubClass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+2} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+3} SubClass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <div className="operator-style-Home" SubClass="RechercheItemScrollBar-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+4} SubClass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+3} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" subclass="RechercheItemScrollBar-Home" style={{ "fontSize":"2vw"}}>+</div>
+        <InputCarte id={"InputCarte"+4} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
         <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+5} SubClass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <InputCarte id={"InputCarte"+5} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
       </div>
       <br/>
       <div className="operator-style-Home" style={{"fontSize":"2vw"}}>=</div>
-      < InputCarte SubClass="RechercheItemScrollBar-Home" id={"ItemCraft"} useStyles={useStyles()} Data={props.ListItem} width="30%" widthList={30+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
+      < InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemCraft"} useStyles={useStyles()} Data={props.ListItem} width="30%" widthList={30+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
     </>
       
 )}

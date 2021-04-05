@@ -33,7 +33,7 @@ const Recherche = (props) => {
   var useStyless=useStyles()
       return (
         <>
-            <InputCarte SubClass="RechercheItemScrollBar-Home" id={"ItemRecette"+1} useStyles={useStyles()} Data={props.ListItem} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
+            <InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemRecette"+1} useStyles={useStyles()} Data={props.ListItem} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
             
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>=</div>
             <br/>
