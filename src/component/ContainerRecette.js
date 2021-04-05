@@ -1,5 +1,6 @@
 import RecetteComponent from "./RecetteComponent"
 import InputCarte from "./InputAutoComplete"
+import { useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     input:{
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
         background:" rgba(255, 255, 255, 0.75)",
         backgroundColor: "#262626",
-        color:"#262626",
+        color:"#7e7e7e",
         paddingLeft:"10px",
         backdropFilter: "blur(100px)",
         '& input:active': {
@@ -36,37 +37,44 @@ const useStyles = makeStyles((theme) => ({
       "& li:active": {
         backgroundColor: "#2977f5",
         color: "white"
-      }
+      },
+      
     }
   }));
+function NormalizeString(Param)
+{
+  return Param.replaceAll(' ','_').normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+const ContainerRecette = (props) => {
 
-const ContainerRecette = () => {
-    const top100Films = [
-        { name: 'The Shawshank ' },
-        { name: 'The Godfather' },
-        { name: 'The Godfather' },
-        { name: 'The Godfather' },
-      ];
     const Show = ()=>{
         let Liste_items =[];
-        for (let i=0;i<5;i++){
-            Liste_items.push(<div key={"RecetteComponent"+i}  id={"RecetteComponent"+i}><RecetteComponent/></div>);
+        for (let i=0;i<props.ListeRecette.length;i++){
+            Liste_items.push(<div key={"RecetteComponent"+props.ListeRecette[i].id}  id={"RecetteComponent"+props.ListeRecette[i].id}> 
+            <RecetteComponent Recette={props.ListeRecette[i]}   ListeCarte={props.ListeCarte} DeleteItem={props.DeleteItem} ModifItem={props.ModifItem} ListItem={props.ListItem}/></div>);
         };
         return Liste_items;
     }
-
+    const [KeyRecherche, setKeyRecherche] = useState(0);
+    function RechercheItem()
+    {
+      if(document.getElementById("InputRechercheItem") && document.getElementById("InputRechercheItem").value)
+      {
+        console.log((document.getElementById("InputRechercheItem").value))
+        props.GetRecetteWithItem({"name":NormalizeString(document.getElementById("InputRechercheItem").value )})
+        setKeyRecherche(KeyRecherche+1)
+      }
+    }
+    
     return (
         <div className="Bg-Bd">
             <nav>
-                {/* <input className="input" id="recherche-craft-by-items" placeholder="Recherche items"></input> */}
-                <InputCarte id={"InputRechercheItem"} useStyles={useStyles()} Data={top100Films} width="30%" widthList={30-4.2}  marginLeft="2.5%" marginRight="2%" placeholder="Recherche items"/>
-                        
-                <input className="input-button Recherche-button" placeholder="Recherche" type="submit" style={{"width":"9%"}}/>
+                <InputCarte key={KeyRecherche} id={"InputRechercheItem"} useStyles={useStyles()} Data={props.ListItem} width="30%" widthList={30-4.2}  
+                marginLeft="2.5%" marginRight="2%" placeholder="Recherche items" SubClass={"RechercheItemScrollBar"}/>
+                <input onClick={RechercheItem} className="input-button Recherche-button" value={"Recherche"} type="submit" style={{"width":"9%"}}/>
             </nav>
             <div id="containeur-all_data">
-                {
-                    Show()
-                }
+                {Show()}
             </div>
         </div>
     )

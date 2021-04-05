@@ -1,6 +1,6 @@
 import InputCarte from "./InputAutoComplete"
-import { useState ,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+
 const useStyles = makeStyles((theme) => ({
     input:{
         width: "100%",
@@ -31,29 +31,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Recherche = (props) => {
   var useStyless=useStyles()
-    const top100Films = [
-        { name: 'The Shawshank ' },
-        { name: 'The Godfather' },
-        { name: 'The Godfather' },
-        { name: 'The Godfather' },
-      ];
       return (
         <>
-            <InputCarte id={"ItemRecette"+1} useStyles={useStyles()} Data={top100Films} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
+            <InputCarte SubClass="RechercheItemScrollBar-Home" id={"ItemRecette"+1} useStyles={useStyles()} Data={props.ListItem} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
             
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>=</div>
             <br/>
           <div style={{display:"flex" ,alignItems:"center"}}>
 
-            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless} Data={top100Films} width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%"disabled="disabled" valueCarte={props.Recette.carte1} />
+            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless}  width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%"disabled="disabled" valueCarte={props.Recette.carte1} />
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+2} useStyles={useStyless} Data={top100Films} width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte2}  />
+            <InputCarte id={"CarteRecette"+2} useStyles={useStyless}  width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte2}  />
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+3} useStyles={useStyless} Data={top100Films} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte3} />
+            <InputCarte id={"CarteRecette"+3} useStyles={useStyless}  width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte3} />
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+4}useStyles={useStyless} Data={top100Films} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte4} />
+            <InputCarte id={"CarteRecette"+4}useStyles={useStyless}  width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte4} />
             <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} Data={top100Films} width="20%" widthList={20- 4.9} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte5}  />
+            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} width="20%" widthList={20- 4.9} marginLeft="1%" marginRight="1%" disabled="disabled" valueCarte={props.Recette.carte5}  />
           </div>
         </>
     )
