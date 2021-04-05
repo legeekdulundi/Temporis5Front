@@ -11,13 +11,13 @@ function HomePage(props) {
   const [ShowVideo, setShowVideo] = useState(true)
   const [NbrRequest, setNbrRequest] = useState(10)
   const [nbrtest, setnbrtest] = useState(0)
-  const [son, setson] = useState("http://localhost:8888/GetSong/1")
+  const [son, setson] = useState("http://167.172.176.232:8888/GetSong/1")
   const [count, setCount] = useState(0);
   
   useEffect(() => {
     if(props.Status===400 || props.Status===500)
     {
-      setson("http://localhost:8888/GetSong/"+NbrRequest)
+      setson("http://167.172.176.232:8888/GetSong/"+NbrRequest)
       document.getElementById("AudioDiv").load()
       setNbrRequest(NbrRequest+1)
       console.log(NbrRequest)
@@ -107,7 +107,7 @@ function HomePage(props) {
     <>
       {
         <>
-        <video id="IdVideo" autoPlay onPlay={SpeedIncreas} muted className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://localhost:8888/GetVideo/" type="video/mp4"></source></video>
+        <video id="IdVideo" autoPlay onPlay={SpeedIncreas} muted className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://167.172.176.232:8888/GetVideo/" type="video/mp4"></source></video>
         {
           !ShowVideo &&
           <div className="background Fade-in">

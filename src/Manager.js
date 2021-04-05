@@ -23,7 +23,7 @@ function Manager() {
   }, [])
   async function GetListItem()
   {
-    fetch('http://localhost:8888/GetItemDTO/', {
+    fetch('http://167.172.176.232:8888/GetItemDTO/', {
       method: 'get',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -38,7 +38,7 @@ function Manager() {
   }
   async function GetListCarte()
   {
-    fetch('http://localhost:8888/GetCarte/', {
+    fetch('http://167.172.176.232:8888/GetCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -50,7 +50,7 @@ function Manager() {
 
   function NewCraft(Craft)
   {
-    fetch('http://localhost:8888/AddCraft/', {
+    fetch('http://167.172.176.232:8888/AddCraft/', {
         method: 'post',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Craft)
@@ -66,7 +66,7 @@ function Manager() {
   }
   function GetListeRecette(Url)
   {
-    fetch('http://localhost:8888/'+Url, {
+    fetch('http://167.172.176.232:8888/'+Url, {
       method: 'get',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -77,7 +77,7 @@ function Manager() {
   }
   function AddCarte(Param)
   {
-    fetch('http://localhost:8888/AddCarte/', {
+    fetch('http://167.172.176.232:8888/AddCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -92,7 +92,7 @@ function Manager() {
   }
   function GetRecetteWithCarte(Param)
   {
-    fetch('http://localhost:8888/GetCraftCarte/', {
+    fetch('http://167.172.176.232:8888/GetCraftCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -110,7 +110,7 @@ function Manager() {
   }
   function GetRecetteWithItem(Param)
   {
-    fetch('http://localhost:8888/GetCraft/', {
+    fetch('http://167.172.176.232:8888/GetCraft/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -130,7 +130,7 @@ function Manager() {
   function ResetStatus(){setRequestStatus(0);}
   function Rechercherecette(Item)
   {
-    fetch('http://localhost:8888/GetCraft/', {
+    fetch('http://167.172.176.232:8888/GetCraft/', {
         method: 'post',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -154,7 +154,7 @@ function Manager() {
   function DeleteItem(Item)
   {
     console.log("mqslkdfmqslkd")
-    fetch('http://localhost:8888/DeleteCraft/', {
+    fetch('http://167.172.176.232:8888/DeleteCraft/', {
         method: 'delete',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -172,7 +172,7 @@ function Manager() {
   function ModifItem(Item)
   {
     console.log("Modif item")
-    fetch('http://localhost:8888/ChangeCtaft/', {
+    fetch('http://167.172.176.232:8888/ChangeCtaft/', {
         method: 'put',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -184,13 +184,13 @@ function Manager() {
       });
   }
   
-  const [son, setson] = useState("http://localhost:8888/GetSong/1")
+  const [son, setson] = useState("http://167.172.176.232:8888/GetSong/1")
   const [count, setCount] = useState(0);
   useInterval(() => {
     const audioEl = document.getElementsByClassName("audio-element")[0]
     if(audioEl.paused)
     {
-      setson("http://localhost:8888/GetSong/"+count)
+      setson("http://167.172.176.232:8888/GetSong/"+count)
       document.getElementById("AudioDiv2").load()
       setCount(count+1)
       console.log(count)
@@ -198,7 +198,7 @@ function Manager() {
       audioEl.pause()
       audioEl.play()
     }
-    console.log("http://localhost:8888/GetSong/"+count)
+    console.log("http://167.172.176.232:8888/GetSong/"+count)
   }, Math.floor(Math.random() * 3600000-1) +1800000); 
   
 
