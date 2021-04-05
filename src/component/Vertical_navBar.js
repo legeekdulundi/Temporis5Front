@@ -89,7 +89,7 @@ const VerticalNavBarre = (props) => {
             <div style={{display:"flex", "flexDirection":"column", "marginLeft":"44%"}}>
             <div style={{display:"flex", "flexDirection":"row"}}>
                 <a className="title-producteure" target="blank" href="https://www.twitch.tv/redklebg/clip/VivaciousGenerousTruffleKlappa?filter=clips&range=all&sort=time ">Design By RedK</a>
-                <a className="song" >♫</a>
+                <a className="song" target="blank" href="https://soundcloud.com/mehdi-midouni/lucy-marguerite">♫</a>
               </div>
               <a className="title-producteure" target="blank" href="https://www.google.com/search?q=BEAU+GOSSE&sxsrf=ALeKk03ZNaa3qMiG8qIZCbe6u5mA6-kaMQ:1617558689236&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiwz8zYk-XvAhUM8BoKHcWaBdcQ_AUoAXoECAEQAw&cshid=1617558761117586&biw=1920&bih=937#imgrc=fIuhv4X4aG4xoM">Code By LeGeek du Lundi</a>
             </div>

@@ -12,6 +12,7 @@ function Manager() {
   const [RequestStatus, setRequestStatus] = useState(0);
   const [RequestStatusFrom, setRequestStatusFrom] = useState('');
   const [ListeRecette, setListeRecette] = useState([]);
+  const [NbrRequest, setNbrRequest] = useState(0);
   
   // body: JSON.stringify({ title: 'React POST Request Example' })
 
@@ -57,13 +58,10 @@ function Manager() {
       .then(function(res) 
       {
         
-        // if(RequestStatus===0)
-        {
           console.log(res);  
           setRequestStatusFrom(res.Api);
           setRequestStatus(res.statut);
-          setTimeout(() => {  setRequestStatus(0);}, 1000);
-        }
+          setNbrRequest(NbrRequest+1);
       });
   }
   function GetListeRecette(Url)
@@ -136,13 +134,16 @@ function Manager() {
       .then(function(res) 
       {
         // if(RequestStatus===0)
-        {
           console.log(res);  
           if(res.statut!==400)
+          {
             setRecetteRecherche(res.listeCraft[0])
+            console.log(res.listeCraft[0])
+          }
+            
           setRequestStatusFrom(res.Api);
           setRequestStatus(res.statut);
-        }
+          setNbrRequest(NbrRequest+1);
       });
   }
   function DeleteItem(Item)
@@ -173,20 +174,20 @@ function Manager() {
       }).then(res=>res.json())
       .then(function(res) 
       {
-          if(res.statut!==400)
-            GetListeRecette("GetNewCraft/");
+          // if(res.statut!==400)
+          GetListeRecette("GetNewCraft/");
       });
   }
-
+  // RefreshPage={GetListeRecette("GetNewCraft/")}
   return (
     <Router>
       <Switch> 
         <Route exact path="/">
-            <HomePage NewCraft={NewCraft} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
-            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} Status={RequestStatus} RequestStatusFrom={RequestStatusFrom}/>
+            <HomePage NewCraft={NewCraft} NbrRequest={NbrRequest} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
+            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} RequestStatusFrom={RequestStatusFrom}/>
         </Route>
         <Route exact path="/BDP">
-            <DBPage  ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
+            <DBPage ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
             AddCarte={AddCarte} GetRecetteWithCarte={GetRecetteWithCarte} DeleteItem={DeleteItem} ModifItem={ModifItem}/>
         </Route>
       </Switch>

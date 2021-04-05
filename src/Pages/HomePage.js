@@ -36,7 +36,7 @@ function HomePage(props) {
       if(audioEl)
         audioEl.pause()
     }
-  }, [props.Status])
+  }, [props.NbrRequest])
   function NormalizeString(Param)
   {
     return Param.replaceAll(' ','_').normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -58,6 +58,7 @@ function HomePage(props) {
     }
   }
   const ShowCraftMenu = (e)=>{
+    
     if(ValueCraftButton==="Craft")
       setValueCraftButton('Envoyer')
     else{
@@ -80,19 +81,22 @@ function HomePage(props) {
   }
   function SpeedIncreas()
   {
-    if(document.getElementById("IdVideo")){document.getElementById("IdVideo").playbackrate=1.7;}
+   
+    if(document.getElementById("IdVideo")){
+      console.log("increase speed")
+      document.getElementById("IdVideo").playbackRate=3;
+    }
+  }
+  function RefreshPage()
+  {
+    props.RefreshPage("GetNewCraft/")
   }
   return (
     <>
       {
         <>
-        <video id="IdVideo" autoPlay muted  playbackrate={3} className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://localhost:8888/GetVideo/" type="video/mp4"></source></video>
-    
+        <video id="IdVideo" autoPlay onPlay={SpeedIncreas} muted className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://localhost:8888/GetVideo/" type="video/mp4"></source></video>
         {
-          SpeedIncreas()
-        }
-        {
-          
           !ShowVideo &&
           <div className="background Fade-in">
             <audio className="audio-element">
@@ -106,7 +110,8 @@ function HomePage(props) {
                 <button id="btnRecherche" className="button-menu" onClick={ShowRechercheMenu} style={{width:"18%"}}>Recherche</button>
                 {/* //className="animated shake" classe qui fais chaque  c */}
                 {showRecherche && <Recherche Recette={props.Recette} ListItem={props.ListItem}/>}
-                <Link to="/BDP" className="button-menu button-Base-donner" style={{width:"25%"}}>Base de donnée</Link>
+                <Link  onClick={RefreshPage} to="/BDP" className="button-menu button-Base-donner" style={{width:"25%"}}>Base de donnée</Link>
+               
               </div>
             </menu> 
           </div>

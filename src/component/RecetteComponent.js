@@ -92,19 +92,19 @@ const RecetteComponent = (props) => {
                   
                   {
                       isModif?
-                      <InputCarte key={"carte1"+props.Recette.id+isModif} id={"carte1"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
-                       marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte} placeholder={props.Recette.carte1}/>
+                      <InputCarte key={"carte1"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte1"+props.Recette.id} useStyles={useStyle} 
+                      height="90px" width="20%" widthList={20-9} marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte} placeholder={props.Recette.carte1}/>
                        :
-                       <InputCarte key={"carte1"+props.Recette.id+isModif} id={"carte1"} useStyles={useStyle} width="20%" widthList={20-4.7} 
+                       <InputCarte key={"carte1"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte1"} useStyles={useStyle} width="20%" widthList={20-9} 
                        paddingTop="15px" marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.carte1} />
                   }
                   <h1 className="operator-style-Component">+</h1>
                   {
                       isModif?
-                      <InputCarte key={"carte2"+props.Recette.id+isModif} id={"carte2"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
+                      <InputCarte key={"carte2"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte2"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-9} 
                        marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte}  placeholder={props.Recette.carte2}/>
                        :
-                       <InputCarte key={"carte2"+props.Recette.id+isModif} id={"carte2"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-4.7} 
+                       <InputCarte key={"carte2"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte2"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-9} 
                        paddingTop="15px" marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.carte2} />
                   }
                   
@@ -112,10 +112,10 @@ const RecetteComponent = (props) => {
                   
                   {
                       isModif?
-                      <InputCarte key={"carte3"+props.Recette.id+isModif} id={"carte3"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
+                      <InputCarte key={"carte3"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte3"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-9} 
                        marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte}  placeholder={props.Recette.carte3}/>
                        :
-                       <InputCarte key={"carte3"+props.Recette.id+isModif} id={"carte3"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-4.7} 
+                       <InputCarte key={"carte3"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte3"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-9} 
                        paddingTop="15px" marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.carte3} />
                   }
                   
@@ -123,10 +123,10 @@ const RecetteComponent = (props) => {
                   
                   {
                       isModif?
-                      <InputCarte key={"carte4"+props.Recette.id+isModif} id={"carte4"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
+                      <InputCarte key={"carte4"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte4"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-9} 
                        marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte}  placeholder={props.Recette.carte4}/>
                        :
-                       <InputCarte key={"carte4"+props.Recette.id+isModif} id={"carte4"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-4.7} 
+                       <InputCarte key={"carte4"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte4"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-9} 
                        paddingTop="15px" marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.carte4} />
                   }
                   
@@ -135,19 +135,19 @@ const RecetteComponent = (props) => {
                   
                   {
                       isModif?
-                      <InputCarte key={"carte5"+props.Recette.id+isModif} id={"carte5"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
+                      <InputCarte key={"carte5"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"}  id={"carte5"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-9} 
                        marginLeft="0.5%" marginRight="0.5%"  Data={props.ListeCarte}  placeholder={props.Recette.carte5}/>
                        :
-                       <InputCarte key={"carte5"+props.Recette.id+isModif} id={"carte5"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-4.7} 
+                       <InputCarte key={"carte5"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"carte5"+props.Recette.id} useStyles={useStyle} width="20%" widthList={20-9} 
                        paddingTop="15px" marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.carte5} />
                   }
                   <h1 className="operator-style-Component" >=</h1>
                   {
                     isModif?
-                    <InputCarte key={"item"+props.Recette.id+isModif} id={"item"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-8} 
+                    <InputCarte key={"item"+props.Recette.id+isModif} subclass={"RechercheItemScrollBar-BDD"} id={"item"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-8.9} 
                       marginLeft="0.5%" marginRight="0.5%"  Data={props.ListItem} placeholder={props.Recette.items.replaceAll('_',' ')}/>
                     :
-                    <InputCarte key={"item"+props.Recette.id+isModif} id={"item"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" widthList={20-4.7} 
+                    <InputCarte key={"item"+props.Recette.id+isModif}  subclass={"RechercheItemScrollBar-BDD"} id={"item"+props.Recette.id} useStyles={useStyle} height="90px" width="20%" 
                       marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.items.replaceAll('_',' ')} />
                   }
                   <img 
