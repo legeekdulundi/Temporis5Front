@@ -4,18 +4,26 @@ import FormulaireNewCraft from "../component/FormulaireNewCraft"
 import Recherche from "../component/RechercheItem"
 
 
-
 function HomePage(props) {
   const [showAddCraft, setshowAddCraft] = useState(false)
   const [showRecherche, setshowRecherche] = useState(false)
   const [ValueCraftButton, setValueCraftButton] = useState('Craft')
   const [ShowVideo, setShowVideo] = useState(true)
-
+  const [NbrRequest, setNbrRequest] = useState(10)
+  const [nbrtest, setnbrtest] = useState(0)
+  const [son, setson] = useState("http://localhost:8888/GetSong/1")
+  const [count, setCount] = useState(0);
+  
   useEffect(() => {
-    
     if(props.Status===400 || props.Status===500)
     {
-      const audioEl = document.getElementsByClassName("audio-element")[0]
+      setson("http://localhost:8888/GetSong/"+NbrRequest)
+      document.getElementById("AudioDiv").load()
+      setNbrRequest(NbrRequest+1)
+      console.log(NbrRequest)
+      // document.getElementsByClassName("audio-element")
+      const audioEl = document.getElementById("AudioDiv")
+      audioEl.pause()
       audioEl.play()
       if(props.RequestStatusFrom!=="/GetCraft")
         document.getElementById("btnCraft").classList.add('Shake-button')
@@ -32,15 +40,18 @@ function HomePage(props) {
     }
     else
     {
-      const audioEl = document.getElementsByClassName("audio-element")[0];
+      const audioEl = document.getElementById("AudioDiv")
       if(audioEl)
         audioEl.pause()
     }
   }, [props.NbrRequest])
+
+  
   function NormalizeString(Param)
   {
     return Param.replaceAll(' ','_').normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
+
   function HideAddCraft()
   {
     if(document.getElementById("InputCarte1"))
@@ -81,16 +92,17 @@ function HomePage(props) {
   }
   function SpeedIncreas()
   {
-   
     if(document.getElementById("IdVideo")){
       console.log("increase speed")
-      document.getElementById("IdVideo").playbackRate=3;
+      document.getElementById("IdVideo").playbackRate=2;
     }
   }
   function RefreshPage()
   {
     props.RefreshPage("GetNewCraft/")
   }
+
+  
   return (
     <>
       {
@@ -99,9 +111,10 @@ function HomePage(props) {
         {
           !ShowVideo &&
           <div className="background Fade-in">
-            <audio className="audio-element">
-              <source src="http://localhost:8888/GetSong/" ></source>
+            <audio id="AudioDiv" className="audio-element">
+                <source  id="SourceAudio"  src={son}></source>
             </audio>
+            
             <div className="logo"></div>
             <menu className="Menu" >
               <div  className="flex-clounm-center" >

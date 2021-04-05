@@ -1,5 +1,5 @@
 import HomePage from "./Pages/HomePage"
-import { useState,useEffect} from 'react';
+import { useState,useEffect,useRef} from 'react';
 import DBPage from "./Pages/DBPage"
 import {  BrowserRouter as Router, Switch, Route,} from "react-router-dom";
 
@@ -120,7 +120,11 @@ function Manager() {
       if(res.statut===200)
         setListeRecette(res.listeCraft)
       else
+      {
+        
         setListeRecette([])
+      }
+        
     });
   }
   function ResetStatus(){setRequestStatus(0);}
@@ -134,11 +138,12 @@ function Manager() {
       .then(function(res) 
       {
         // if(RequestStatus===0)
-          console.log(res);  
+          console.log(res.statut);  
           if(res.statut!==400)
           {
             setRecetteRecherche(res.listeCraft[0])
             console.log(res.listeCraft[0])
+            
           }
             
           setRequestStatusFrom(res.Api);
@@ -178,20 +183,62 @@ function Manager() {
           GetListeRecette("GetNewCraft/");
       });
   }
+  
+  const [son, setson] = useState("http://localhost:8888/GetSong/1")
+  const [count, setCount] = useState(0);
+  useInterval(() => {
+    const audioEl = document.getElementsByClassName("audio-element")[0]
+    if(audioEl.paused)
+    {
+      setson("http://localhost:8888/GetSong/"+count)
+      document.getElementById("AudioDiv2").load()
+      setCount(count+1)
+      console.log(count)
+      const audioEl = document.getElementById("AudioDiv2")
+      audioEl.pause()
+      audioEl.play()
+    }
+    console.log("http://localhost:8888/GetSong/"+count)
+  }, Math.floor(Math.random() * 3600000-1) +1800000); 
+  
+
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+  
+    // Remember the latest function.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+  
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+  
   // RefreshPage={GetListeRecette("GetNewCraft/")}
   return (
     <Router>
       <Switch> 
         <Route exact path="/">
             <HomePage NewCraft={NewCraft} NbrRequest={NbrRequest} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
-            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} RequestStatusFrom={RequestStatusFrom}/>
+            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} 
+            RequestStatusFrom={RequestStatusFrom}/>
         </Route>
         <Route exact path="/BDP">
             <DBPage ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
             AddCarte={AddCarte} GetRecetteWithCarte={GetRecetteWithCarte} DeleteItem={DeleteItem} ModifItem={ModifItem}/>
         </Route>
       </Switch>
-
+      <audio id="AudioDiv2" className="audio-element">
+          <source  id="SourceAudio2"  src={son}></source>
+      </audio>
     </Router>
   );
 }

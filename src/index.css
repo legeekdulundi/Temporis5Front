@@ -372,13 +372,10 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
   height: 20%;
 }
 .edit-craft{
-  /* font-size: 1.3vw; */
   width: 10%;
   height: 50%;
   margin-top: 35%;
-  /* margin-right: 35%; */
   cursor: pointer;
-  /* color: #270B31; */
 }
 .Image-Items{
   width: 15%;
@@ -400,7 +397,7 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
   font-size: 0.7vw;
   color: #707070;
   font-family: 'Quicksand';
-  margin-top: 4%;
+  margin-top: 7%;
   outline: none;
   text-decoration:none;
 }
@@ -408,6 +405,8 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
   margin-left: 10%;
   color:#7e7e7e;
   margin-top: 2.2%;
+  font-size: 0.9vw;
+  cursor: pointer;
 }
 
 
