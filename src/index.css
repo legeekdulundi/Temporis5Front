@@ -2,6 +2,10 @@
 	font-family: "teste";
 	src: url('./src/Font/Quicksand.ttf');
 } */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
+html,body{
+font-family: 'Quicksand', sans-serif;
+}
 html{
   background-color: #270B31;
   position: fixed;
