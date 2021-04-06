@@ -56,8 +56,7 @@ const VerticalNavBarre = (props) => {
     }
     else{
       const audioEl = document.getElementById("RedSong")
-      if(audioEl)
-        audioEl.pause()
+      audioEl.pause()
     }
   }
 
