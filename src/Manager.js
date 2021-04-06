@@ -13,7 +13,9 @@ function Manager() {
   const [RequestStatusFrom, setRequestStatusFrom] = useState('');
   const [ListeRecette, setListeRecette] = useState([]);
   const [NbrRequest, setNbrRequest] = useState(0);
-  
+
+  const [LienBack, setLienBack] = useState('http://167.172.176.232:8888');
+
   // body: JSON.stringify({ title: 'React POST Request Example' })
 
   useEffect(() => {
@@ -23,7 +25,7 @@ function Manager() {
   }, [])
   async function GetListItem()
   {
-    fetch('http://167.172.176.232:8888/GetItemDTO/', {
+    fetch(LienBack + '/GetItemDTO/', {
       method: 'get',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -38,7 +40,7 @@ function Manager() {
   }
   async function GetListCarte()
   {
-    fetch('http://167.172.176.232:8888/GetCarte/', {
+    fetch(LienBack + '/GetCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -50,7 +52,7 @@ function Manager() {
 
   function NewCraft(Craft)
   {
-    fetch('http://167.172.176.232:8888/AddCraft/', {
+    fetch(LienBack + '/AddCraft/', {
         method: 'post',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Craft)
@@ -66,7 +68,7 @@ function Manager() {
   }
   function GetListeRecette(Url)
   {
-    fetch('http://167.172.176.232:8888/'+Url, {
+    fetch(LienBack + Url, {
       method: 'get',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
     }).then(res=>res.json())
@@ -77,7 +79,7 @@ function Manager() {
   }
   function AddCarte(Param)
   {
-    fetch('http://167.172.176.232:8888/AddCarte/', {
+    fetch( LienBack + '/AddCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -92,7 +94,7 @@ function Manager() {
   }
   function GetRecetteWithCarte(Param)
   {
-    fetch('http://167.172.176.232:8888/GetCraftCarte/', {
+    fetch(LienBack + '/GetCraftCarte/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -110,7 +112,7 @@ function Manager() {
   }
   function GetRecetteWithItem(Param)
   {
-    fetch('http://167.172.176.232:8888/GetCraft/', {
+    fetch(LienBack + '/GetCraft/', {
       method: 'post',
       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
       body: JSON.stringify(Param)
@@ -130,7 +132,7 @@ function Manager() {
   function ResetStatus(){setRequestStatus(0);}
   function Rechercherecette(Item)
   {
-    fetch('http://167.172.176.232:8888/GetCraft/', {
+    fetch( LienBack + '/GetCraft/', {
         method: 'post',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -154,7 +156,7 @@ function Manager() {
   function DeleteItem(Item)
   {
     console.log("mqslkdfmqslkd")
-    fetch('http://167.172.176.232:8888/DeleteCraft/', {
+    fetch(LienBack + '/DeleteCraft/', {
         method: 'delete',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -172,7 +174,7 @@ function Manager() {
   function ModifItem(Item)
   {
     console.log("Modif item")
-    fetch('http://167.172.176.232:8888/ChangeCtaft/', {
+    fetch(LienBack + '/ChangeCtaft/', {
         method: 'put',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
         body: JSON.stringify(Item)
@@ -184,13 +186,13 @@ function Manager() {
       });
   }
   
-  const [son, setson] = useState("http://167.172.176.232:8888/GetSong/1")
+  const [son, setson] = useState(LienBack + "/GetSong/1")
   const [count, setCount] = useState(0);
   useInterval(() => {
     const audioEl = document.getElementsByClassName("audio-element")[0]
     if(audioEl.paused)
     {
-      setson("http://167.172.176.232:8888/GetSong/"+count)
+      setson(LienBack + "/GetSong/"+ count)
       document.getElementById("AudioDiv2").load()
       setCount(count+1)
       console.log(count)
@@ -198,7 +200,7 @@ function Manager() {
       audioEl.pause()
       audioEl.play()
     }
-    console.log("http://167.172.176.232:8888/GetSong/"+count)
+    console.log(LienBack + "/GetSong/"+count)
   }, Math.floor(Math.random() * 3600000-1) +1800000); 
   
 
@@ -229,7 +231,7 @@ function Manager() {
         <Route exact path="/">
             <HomePage NewCraft={NewCraft} NbrRequest={NbrRequest} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
             Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} 
-            RequestStatusFrom={RequestStatusFrom}/>
+            RequestStatusFrom={RequestStatusFrom} lienBack={LienBack}/>
         </Route>
         <Route exact path="/BDP">
             <DBPage ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}

@@ -17,7 +17,7 @@ function HomePage(props) {
   useEffect(() => {
     if(props.Status===400 || props.Status===500)
     {
-      setson("http://167.172.176.232:8888/GetSong/"+NbrRequest)
+      setson(props.lienBack + "/GetSong/"+NbrRequest)
       document.getElementById("AudioDiv").load()
       setNbrRequest(NbrRequest+1)
       console.log(NbrRequest)
@@ -107,7 +107,7 @@ function HomePage(props) {
     <>
       {
         <>
-        <video id="IdVideo" autoPlay onPlay={SpeedIncreas} muted className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src="http://167.172.176.232:8888/GetVideo/" type="video/mp4"></source></video>
+        <video id="IdVideo" autoPlay onPlay={SpeedIncreas} muted className="Background-video" onEnded={() => setShowVideo(!ShowVideo)}><source src={props.lienBack + "/GetVideo/"} type="video/mp4"></source></video>
         {
           !ShowVideo &&
           <div className="background Fade-in">
