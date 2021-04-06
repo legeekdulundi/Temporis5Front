@@ -166,7 +166,7 @@ function Manager() {
         if(RequestStatus===0)
         {
           if(res.statut!==400)
-            GetListeRecette("GetNewCraft/");
+            GetListeRecette("/GetNewCraft/");
         }
       });
   }
