@@ -14,7 +14,7 @@ function Manager() {
   const [ListeRecette, setListeRecette] = useState([]);
   const [NbrRequest, setNbrRequest] = useState(0);
 
-  const [LienBack, setLienBack] = useState('http://167.172.176.232:8888');
+  const [LienBack, setLienBack] = useState('http://167.172.176.232:8888/');
 
   // body: JSON.stringify({ title: 'React POST Request Example' })
 
