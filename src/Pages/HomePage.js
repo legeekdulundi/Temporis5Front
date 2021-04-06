@@ -99,7 +99,7 @@ function HomePage(props) {
   }
   function RefreshPage()
   {
-    props.RefreshPage("GetNewCraft/")
+    props.RefreshPage("/GetNewCraft/")
   }
 
   
