@@ -50,12 +50,12 @@ const VerticalNavBarre = (props) => {
 
   function PlaySong(Play){
     if (Play){
-      const audioEl = document.getElementById("audio-element-red-song")
+      const audioEl = document.getElementById("RedSong")
       if(audioEl)
         audioEl.play()
     }
     else{
-      const audioEl = document.getElementById("audio-element-red-song")
+      const audioEl = document.getElementById("RedSong")
       if(audioEl)
         audioEl.pause()
     }
@@ -109,7 +109,7 @@ const VerticalNavBarre = (props) => {
             <div style={{display:"flex", "flexDirection":"row"}}>
                 <a className="title-producteure" target="blank" href="https://www.twitch.tv/redklebg/clip/VivaciousGenerousTruffleKlappa?filter=clips&range=all&sort=time ">Design By RedK</a>
                 <h1 className="song" target="blank" onClick={SongPlay}>♫</h1>
-                <audio id="audio-element-red-song">
+                <audio id="RedSong">
                     <source src="http://167.172.176.232:8888/GetSongRedkBebe/" ></source>
                 </audio>
                 {
