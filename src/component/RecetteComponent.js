@@ -151,7 +151,7 @@ const RecetteComponent = (props) => {
                       marginLeft="0.5%" marginRight="0.5%" disabled="disabled" placeholder={props.Recette.items.replaceAll('_',' ')} />
                   }
                   <img 
-                      src={"167.172.176.232:8888/GetImageItems/"+props.Recette.items}
+                      src={"167.172.176.232:8888/GetImageItems/"+ props.Recette.id}
                       alt={props.Recette.items}
                       className="Image-Items"
                     />
