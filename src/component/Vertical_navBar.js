@@ -49,13 +49,12 @@ const VerticalNavBarre = (props) => {
   }
 
   function PlaySong(Play){
+    const audioEl = document.getElementById("RedSong")
     if (Play){
-      const audioEl = document.getElementById("RedSong")
       if(audioEl)
         audioEl.play()
     }
     else{
-      const audioEl = document.getElementById("RedSong")
       audioEl.pause()
     }
   }

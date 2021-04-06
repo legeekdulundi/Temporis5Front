@@ -93,13 +93,14 @@ html{
   text-align:center;
   border-radius: 15px;
   outline-style: none;
-  /* border: solid 1.5px ;
-  border: linear-gradient(100deg, #FFFFFF 0%, rgba(0, 0, 0, 0) 100%); */
+  border: solid 1.5px ;
+  border-color: #ffffffff;
   text-decoration: none;
   line-height:175%;
   margin:1%;
   opacity: 0.8;
   cursor: pointer;
+
 }
 .button-menu:hover{
   background-color: #660074;
