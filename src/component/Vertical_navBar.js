@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         maxHeight:'35px',
         height:"200px",
-        fontSize:"20px",
+        fontSize:"18px",
         textAlign: "left",
         outline:"none",
         borderRadius: "15px",
@@ -84,9 +84,9 @@ const VerticalNavBarre = (props) => {
                  <div style={{"display": "flex", "flexDirection": "column"}}>
                     <h1 className="titre-verticalNav">Recherche Carte</h1>
                     <div style={{display:"flex"}}>
-                        <InputCarte key={IdInputRecherche} id={"InputAddCarte1"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="100%" widthList={50-1.7}  
-                        marginLeft="1%" marginRight="10%" placeholder=" carte"/>
-                        <input id="ButtonRecherche" onClick={OnClickListenRecherche} className="input-button" type="submit" value={"Rechercher"} style={{width:"44%"}}/>
+                        <InputCarte key={IdInputRecherche} id={"InputAddCarte1"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="100%" widthList={60.2}  
+                        marginLeft="1%" marginRight="3%" placeholder=" carte"/>
+                        <input id="ButtonRecherche" onClick={OnClickListenRecherche} className="input-button" type="submit" value={"Rechercher"} style={{width:"34%"}}/>
                     </div>
                 </div>
                 {/* <input className="input" id="input-add-craft" placeholder="Recherche carte" style={{"margin-bottom" : "25%"}}/> */}

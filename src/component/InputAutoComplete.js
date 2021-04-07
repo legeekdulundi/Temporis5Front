@@ -25,7 +25,7 @@ export default function UseAutocomplete(props) {
         style={{resize:"none",textAlignLast:"center",paddingTop:props.paddingTop,overflowY:"hidden",height:props.height,maxHeight:props.height}} ></textarea>
         :
         <div {...getRootProps()}>
-          {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}/>}
+          {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled} />}
           {/* {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}/>} */}
         </div>
       }

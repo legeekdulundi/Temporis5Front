@@ -18,7 +18,6 @@ function Manager() {
 
   const mediaMatch = window.matchMedia('(min-width: 600px)');
   const [matches] = useState(mediaMatch.matches);
-  console.log(matches)
 
 
   useEffect(() => {
@@ -154,7 +153,6 @@ function Manager() {
   
   function ModifItem(Item)
   {
-    console.log("Modif item")
     fetch(LienBack + '/ChangeCtaft/', {
         method: 'put',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
