@@ -33,25 +33,23 @@ const Recherche = (props) => {
   var useStyless=useStyles()
       return (
         <>
-            <InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemRecette"+1} useStyles={useStyles()} Data={props.ListItem} width="20%" widthList={20+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
-            
-            <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>=</div>
-            <br/>
-          <div style={{display:"flex" ,alignItems:"center"}}>
-
-            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless}  width="20%" widthList={20-4.7}  marginLeft="1%" marginRight="1%"
+          <InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemRecette"+1} useStyles={useStyles()} Data={props.ListItem} width={props.matches ? "30%" : "80%"} widthList={props.matches ? 30.18 : 80.7} marginLeft="1%" marginRight="1%" placeholder={"Item"} />
+          <div className="operator-style-Home" >=</div>
+          
+          <div className="NewCraftContenaire">
+            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79}  marginLeft="1%" marginRight="1%"
             disabled="disabled" placeholder={props.Recette.carte1} />
-            <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+2} useStyles={useStyless}  width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" 
+            <div className="operator-style-Home" >+</div>
+            <InputCarte id={"CarteRecette"+2} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte2}  />
-            <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+3} useStyles={useStyless}  width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%"
+            <div className="operator-style-Home" >+</div>
+            <InputCarte id={"CarteRecette"+3} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%"
              disabled="disabled" placeholder={props.Recette.carte3} />
-            <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+4}useStyles={useStyless}  width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" 
+            <div className="operator-style-Home" >+</div>
+            <InputCarte id={"CarteRecette"+4}useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte4} />
-            <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} width="20%" widthList={20- 4.9} marginLeft="1%" marginRight="1%" 
+            <div className="operator-style-Home" >+</div>
+            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte5}  />
           </div>
         </>

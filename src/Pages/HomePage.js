@@ -10,9 +10,8 @@ function HomePage(props) {
   const [ValueCraftButton, setValueCraftButton] = useState('Craft')
   const [ShowVideo, setShowVideo] = useState(true)
   const [NbrRequest, setNbrRequest] = useState(10)
-  const [nbrtest, setnbrtest] = useState(0)
+
   const [son, setson] = useState("http://167.172.176.232:8888/GetSong/1")
-  const [count, setCount] = useState(0);
   
   useEffect(() => {
     if(props.Status===400 || props.Status===500)
@@ -93,7 +92,6 @@ function HomePage(props) {
   function SpeedIncreas()
   {
     if(document.getElementById("IdVideo")){
-      console.log("increase speed")
       document.getElementById("IdVideo").playbackRate=2;
     }
   }
@@ -118,13 +116,11 @@ function HomePage(props) {
             <div className="logo"></div>
             <menu className="Menu" >
               <div  className="flex-clounm-center" >
-                {showAddCraft ? <FormulaireNewCraft ListItem={props.ListItem} ListeCarte={props.ListeCarte}/> : HideAddCraft()}
-                <button id="btnCraft" className="button-menu button-craft" onClick={ShowCraftMenu} style={{width:"13%"}}>{ValueCraftButton}</button>
-                <button id="btnRecherche" className="button-menu" onClick={ShowRechercheMenu} style={{width:"18%"}}>Recherche</button>
-                {/* //className="animated shake" classe qui fais chaque  c */}
-                {showRecherche && <Recherche Recette={props.Recette} ListItem={props.ListItem}/>}
-                <Link  onClick={RefreshPage} to="/BDP" className="button-menu button-Base-donner" style={{width:"25%"}}>Base de donnée</Link>
-               
+                {showAddCraft ? <FormulaireNewCraft ListItem={props.ListItem} ListeCarte={props.ListeCarte} matches={props.matches}/> : HideAddCraft()}
+                <button id="btnCraft" className="button-menu button-craft" onClick={ShowCraftMenu} >{ValueCraftButton}</button>
+                <button id="btnRecherche" className="button-menu button-recherche" onClick={ShowRechercheMenu}>Recherche</button>
+                {showRecherche && <Recherche Recette={props.Recette} ListItem={props.ListItem} matches={props.matches} />}
+                <Link  onClick={RefreshPage} to="/BDP" className="button-menu button-Base-donner" >Base de donnée</Link>
               </div>
             </menu> 
           </div>

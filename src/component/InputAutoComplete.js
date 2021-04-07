@@ -26,10 +26,11 @@ export default function UseAutocomplete(props) {
         :
         <div {...getRootProps()}>
           {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}/>}
+          {/* {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}/>} */}
         </div>
       }
       {groupedOptions.length > 0 ? (
-        <ul data-class={props.subclass}  id="testList"className={classes.listbox} {...getListboxProps()} style={{width:props.widthList+"%"}}>
+        <ul data-class={props.subclass}  id="testList" className={classes.listbox} {...getListboxProps()} style={{width:props.widthList+"%"}}>
           {groupedOptions.map((option, index) => (
             <li {...getOptionProps({ option, index })}>{option.name}</li>
           ))}

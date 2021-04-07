@@ -2,7 +2,8 @@
 	font-family: "teste";
 	src: url('./src/Font/Quicksand.ttf');
 } */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap');
+
 html,body{
 font-family: 'Quicksand', sans-serif;
 }
@@ -13,8 +14,6 @@ html{
   right: 0;
   bottom: 0;
   left: 0;
-  /* width: 100%;
-  height: 100%; */
 }
 /*Maine Page*/
 .background{
@@ -63,30 +62,6 @@ html{
   justify-content: center; 
   text-align: center;
 }
-.button-craft{
-  width: 10%;
-  height: 25%;
-  left: calc(50% - 234px/2 - 0.48px);
-  top: calc(50% - 80px/2 - 76px);
-}
-.button-recherche{
-  width: 20%;
-  height: 25%;
-  left: calc(50% - 353px/2 + 0.02px);
-  top: calc(50% - 80px/2 + 19px);
-}
-.button-Base-donner{
-  width: 55%;
-  height: 50%;
-  left: calc(50% - 451px/2 - 0.98px);
-  top: calc(50% - 80px/2 + 114px);
-  margin-left: 15%;
-}
-.Recherche-button{
-  height:50%;
-  background-color: #262626;
-  border:none;
-}
 .button-menu{
   font-family: 'Quicksand';
   color : #FFFFFF;
@@ -104,87 +79,31 @@ html{
   margin:1%;
   opacity: 0.8;
   cursor: pointer;
-
+}
+.button-craft{
+  width:13%;
+}
+.button-recherche{
+  width:18%;
+}
+.button-Base-donner{
+  width:25%;
 }
 .button-menu:hover{
   background-color: #660074;
   transition: 0.6s;
 }
 /*Craft Page*/
-/*Craft input carte*/
-.menu-craft{
-  display : flex;
-  flex-direction: column;
-  width : 225%;
-  margin-top : 1%;
-  margin-bottom : 2%;
-  margin-right: 10%;
-  text-align:center;
-}
-.container-input-craft{
+.NewCraftContenaire{
   display:flex;
-  flex-direction: raw;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-  margin-left: 2.2%;
-}
-
-.input-test{
-   outline : none ;
-   width : 95% ;
-   height : 2vw ;
-   border-radius : 15px ;
-   border : none ;
-   font-size : 2vw ;
-   background : rgba(255, 255, 255, 0.75) ;
-   backdrop-filter : blur(100px) ;
-   font-family : 'Quicksand'  
+  align-items:center;
 }
 .listbox {
   font-size : 1vw ;
 }
-.input-craft{
-  display:flex;
-  flex-direction: raw;
-  align-items: center;
-}
-.input{
-  width: 100%;
-  max-height:35px;
-  font-size:28px;
-  outline:none;
-  border-radius: 15px;
-  border: none;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(100px);
-}
-
-
-.operator-style{
-  font-size: 1.5vw;
-  margin-left : 1.5%;
-  margin-right : 1.5%; 
-  color:#f494bf;
-}
-.operator-style-Component{
-  font-size: 1.5vw;
-  color:#f494bf;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
-}
 .operator-style-Home{
-  font-size: 1.5vw;
-  margin-left : 1%;
-  margin-right : 1%; 
   color:#FFFFFF;
-}
-#input-items{
-  align-self: center;
-  font-size: 1.15vw;
-  padding:  0.4% 0.3% 0.5% 0;
-  margin-left: 5%;
-  width: 15%;
+  font-size:2vw;
 }
 /*Db Page*/
 /*Nav bar*/
@@ -346,10 +265,12 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
   flex-direction: column;
   margin-top: 4%; 
 }
+.ButonRecherche{
+  width:10%;
+  height : 47%
+}
 .porteur-all-data-craft{
   display:flex;
-  height: 200px;
-  flex-direction: raw;
   width: 95%;
   margin-left: 2.5%;
   margin-bottom: 2%;
@@ -529,4 +450,103 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
 }
 .zoom img:hover{
   transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .Menu{
+    margin:0;
+    padding: 0;
+    position: relative;
+    width: 95%;
+    height: 88.2%;
+    left: 0%;
+    top: 10%;
+    background-color: #FFFFFF;
+    background: radial-gradient(50% 50% at 50% 50%, #7D0080 0%, rgba(255, 255, 255, 0) 100%), rgba(253, 253, 253, 0.01);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    backdrop-filter: blur(7px);
+    border-radius: 35px;
+  }
+  .logo{
+    width: 75%;
+    height: 20%;
+    margin :0.5% 0% 0% 10%;
+  }
+  .flex-clounm-center{
+    margin-top: 35%;
+  }
+  .button-menu{
+    font-size: 8vw;
+  }
+  .button-craft{
+    width:40%;
+  }
+  .button-recherche{
+    width:50%;
+  }
+  .button-Base-donner{
+    width:75%;
+  }
+  .NewCraftContenaire{
+    flex-direction: column;
+  }
+
+  .operator-style-Home{
+    font-size:7.3vw;
+  }
+
+  .Bg-Bd{
+    width: 100%;
+    height: 40%;
+    top:0;
+  }
+  .nav-vertical-containeure{
+    display :none;
+  }
+  nav{
+    height: 20%;
+    width: 100%;
+  }
+  .ButonRecherche{
+    width:30%;
+    height : 47%;
+    font-size:5vw;
+  }
+
+  .porteur-all-data-craft{
+    width:95%;
+    flex-direction: column;
+    height: 650px;
+    border-radius: 15px 15px 25px 25px;
+  }
+  .data-craft-containeure{
+    width:100%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    flex-direction: column;
+  }
+  .container-edit-craft {
+    flex-direction: row;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    height:10%;
+  }
+  .operator-style-Component{
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+  .Image-Items{
+    display:none;
+  }
+  .edit-craft{
+    width: 100%;
+    height: 10%;
+    margin-top: 0%;
+    margin-left: 20%;
+    cursor: pointer;
+  }
 }

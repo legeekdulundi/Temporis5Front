@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import InputCarte from "./InputAutoComplete"
 import { makeStyles } from '@material-ui/core/styles';
 import { useState} from 'react';
+
 const useStyles = makeStyles((theme) => ({
     input:{
         width: "100%",
@@ -40,35 +41,30 @@ const useStyles = makeStyles((theme) => ({
 const VerticalNavBarre = (props) => {
 
 
-  const [IdInput, setIdInput] = useState(2);
   const [IdInputRecherche, setIdInputRecherche] = useState(100);
   const [RedkSong, setRedkSong] = useState(false);
 
   function SongPlay(){
-    setRedkSong(!RedkSong)
+    setRedkSong(!RedkSong);
   }
 
   function PlaySong(Play){
-    const audioEl = document.getElementById("RedSong")
+    const audio = document.getElementById("RedSong");
     if (Play){
-      if(audioEl)
-        audioEl.play()
+      if(audio)
+        audio.play();
     }
     else{
-      audioEl.pause()
-    }
+      if (audio)
+        audio.pause();
+    };
   }
 
-  function OnClickListen()
-  {
-    if(document.getElementById("InputAddCarte2") && document.getElementById("InputAddCarte2").value)
-    {
-      console.log(document.getElementById("InputAddCarte2").value)
-      props.AddCarte({"name":document.getElementById("InputAddCarte2").value,"nivCarte":""})
-      // document.getElementById("InputAddCarte2").value=null;
-      setIdInput(IdInput+1)
-    }
+  function RestartSong(){
+    const audio = document.getElementById("RedSong");
+    audio.currentTime = 0;
   }
+
   function OnClickListenRecherche()
   {
     if(document.getElementById("InputAddCarte1") && document.getElementById("InputAddCarte1").value)
@@ -94,24 +90,24 @@ const VerticalNavBarre = (props) => {
                     </div>
                 </div>
                 {/* <input className="input" id="input-add-craft" placeholder="Recherche carte" style={{"margin-bottom" : "25%"}}/> */}
-                <div style={{"display": "flex", "flexDirection": "column"}}>
+                {/* <div style={{"display": "flex", "flexDirection": "column"}}>
                     <h1 className="titre-verticalNav">Ajout Carte</h1>
                     <div style={{display:"flex"}}>
                         <InputCarte key={IdInput} id={"InputAddCarte2"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="60%" widthList={60-1.3} 
                          marginLeft="1%" marginRight="10%" placeholder=" carte"/>
                         <input id="ButtonAjout" onClick={OnClickListen} className="input-button" type="submit"  value={"Ajouter"}/>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div style={{display:"flex", "flexDirection":"column", "marginLeft":"44%"}}>
             <div style={{display:"flex", "flexDirection":"row"}}>
                 <a className="title-producteure" target="blank" href="https://www.twitch.tv/redklebg/clip/VivaciousGenerousTruffleKlappa?filter=clips&range=all&sort=time ">Design By RedK</a>
-                <h1 className="song" target="blank" onClick={SongPlay}>♫</h1>
+                <h1 className="song" target="blank" onClick={SongPlay} onDoubleClick={RestartSong} >♫</h1>
                 <audio id="RedSong">
                     <source src="http://167.172.176.232:8888/GetSongRedkBebe/" ></source>
                 </audio>
                 {
-                  RedkSong && PlaySong(RedkSong) 
+                  PlaySong(RedkSong) 
                 }
               </div>
               <a className="title-producteure" target="blank" href="https://www.google.com/search?q=BEAU+GOSSE&sxsrf=ALeKk03ZNaa3qMiG8qIZCbe6u5mA6-kaMQ:1617558689236&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiwz8zYk-XvAhUM8BoKHcWaBdcQ_AUoAXoECAEQAw&cshid=1617558761117586&biw=1920&bih=937#imgrc=fIuhv4X4aG4xoM">Code By LeGeek du Lundi</a>

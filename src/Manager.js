@@ -14,9 +14,12 @@ function Manager() {
   const [ListeRecette, setListeRecette] = useState([]);
   const [NbrRequest, setNbrRequest] = useState(0);
 
-  const [LienBack, setLienBack] = useState('http://167.172.176.232:8888');
+  const [LienBack] = useState('http://167.172.176.232:8888');
 
-  // body: JSON.stringify({ title: 'React POST Request Example' })
+  const mediaMatch = window.matchMedia('(min-width: 600px)');
+  const [matches] = useState(mediaMatch.matches);
+  console.log(matches)
+
 
   useEffect(() => {
     GetListItem()
@@ -59,8 +62,6 @@ function Manager() {
       }).then(res=>res.json())
       .then(function(res) 
       {
-        
-          console.log(res);  
           setRequestStatusFrom(res.Api);
           setRequestStatus(res.statut);
           setNbrRequest(NbrRequest+1);
@@ -75,21 +76,6 @@ function Manager() {
     .then(function(res){
       // res.items.
       setListeRecette(res.listeCraft)
-    });
-  }
-  function AddCarte(Param)
-  {
-    fetch( LienBack + '/AddCarte/', {
-      method: 'post',
-      headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
-      body: JSON.stringify(Param)
-    }).then(res=>res.json())
-    .then(function(res) 
-    {
-      if(res.statut===200)
-      {
-        GetListCarte()
-      }
     });
   }
   function GetRecetteWithCarte(Param)
@@ -139,13 +125,9 @@ function Manager() {
       }).then(res=>res.json())
       .then(function(res) 
       {
-        // if(RequestStatus===0)
-          console.log(res.statut);  
           if(res.statut!==400)
           {
-            setRecetteRecherche(res.listeCraft[0])
-            console.log(res.listeCraft[0])
-            
+            setRecetteRecherche(res.listeCraft[0]);
           }
             
           setRequestStatusFrom(res.Api);
@@ -155,7 +137,6 @@ function Manager() {
   }
   function DeleteItem(Item)
   {
-    console.log("mqslkdfmqslkd")
     fetch(LienBack + '/DeleteCraft/', {
         method: 'delete',
         headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
@@ -189,19 +170,16 @@ function Manager() {
   const [son, setson] = useState(LienBack + "/GetSong/1")
   const [count, setCount] = useState(0);
   useInterval(() => {
-    const audioEl = document.getElementsByClassName("audio-element")[0]
+    const audioEl = document.getElementById("Audio")
     if(audioEl.paused)
     {
       setson(LienBack + "/GetSong/"+ count)
-      document.getElementById("AudioDiv2").load()
+      document.getElementById("Audio").load()
       setCount(count+1)
-      console.log(count)
-      const audioEl = document.getElementById("AudioDiv2")
-      audioEl.pause()
-      audioEl.play()
+      if (audioEl)
+        audioEl.play()
     }
-    console.log(LienBack + "/GetSong/"+count)
-  }, Math.floor(Math.random() * 3600000-1) +1800000); 
+  }, Math.floor(Math.random() * 2400000) +1200000); 
   
 
   function useInterval(callback, delay) {
@@ -230,17 +208,20 @@ function Manager() {
       <Switch> 
         <Route exact path="/">
             <HomePage NewCraft={NewCraft} NbrRequest={NbrRequest} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
-            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} 
+            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} matches={matches}
             RequestStatusFrom={RequestStatusFrom} lienBack={LienBack}/>
         </Route>
         <Route exact path="/BDP">
             <DBPage ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
-            AddCarte={AddCarte} GetRecetteWithCarte={GetRecetteWithCarte} DeleteItem={DeleteItem} ModifItem={ModifItem}/>
+            GetRecetteWithCarte={GetRecetteWithCarte} DeleteItem={DeleteItem} ModifItem={ModifItem} matches={matches}/>
         </Route>
       </Switch>
-      <audio id="AudioDiv2" className="audio-element">
-          <source  id="SourceAudio2"  src={son}></source>
+      <audio id="Audio" className="audio-element">
+          <source  src={son}></source>
       </audio>
+      {/* <audio id="AudioDiv2" className="audio-element">
+          <source  id="SourceAudio2"  src={son}></source>
+      </audio> */}
     </Router>
   );
 }

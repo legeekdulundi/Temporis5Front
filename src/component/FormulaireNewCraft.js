@@ -1,7 +1,7 @@
 import InputCarte from "./InputAutoComplete"
 import { makeStyles } from '@material-ui/core/styles';
-const InputCraft = (props) => {
 
+const InputCraft = (props) => {
 
   const useStyles = makeStyles((theme) => ({
     input:{
@@ -32,23 +32,23 @@ const InputCraft = (props) => {
   }));
 
 
+
   console.log(props.ListeCarte)
   return (
     <>
-      <div style={{display:"flex",alignItems:"center"}}>
-        <InputCarte id={"InputCarte"+1} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+2} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+3} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <div className="operator-style-Home" subclass="RechercheItemScrollBar-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+4} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20-4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
-        <div className="operator-style-Home" style={{ "fontSize":"2vw"}}>+</div>
-        <InputCarte id={"InputCarte"+5} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width="20%" widthList={20- 4.7} marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+      <div className="NewCraftContenaire">
+        <InputCarte id={"InputCarte"+1} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width={props.matches ? "20%" : "70%"} widthList={props.matches ? 16.75 : 69.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" >+</div>
+        <InputCarte id={"InputCarte"+2} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width={props.matches ? "20%" : "70%"} widthList={props.matches ? 16.75 : 69.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" >+</div>
+        <InputCarte id={"InputCarte"+3} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width={props.matches ? "20%" : "70%"} widthList={props.matches ? 16.75 : 69.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" >+</div>
+        <InputCarte id={"InputCarte"+4} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width={props.matches ? "20%" : "70%"} widthList={props.matches ? 16.75 : 69.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
+        <div className="operator-style-Home" >+</div>
+        <InputCarte id={"InputCarte"+5} subclass="RechercheItemScrollBar-Home" useStyles={useStyles()} Data={props.ListeCarte} width={props.matches ? "20%" : "70%"} widthList={props.matches ? 16.75 : 69.2}  marginLeft="1%" marginRight="1%" placeholder={"Carte"}/>
       </div>
-      <br/>
-      <div className="operator-style-Home" style={{"fontSize":"2vw"}}>=</div>
-      < InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemCraft"} useStyles={useStyles()} Data={props.ListItem} width="30%" widthList={30+ 0.2} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
+      <div className="operator-style-Home" >=</div>
+      < InputCarte subclass="RechercheItemScrollBar-Home" id={"ItemCraft"} useStyles={useStyles()} Data={props.ListItem} width={props.matches ? "30%" : "80%"} widthList={props.matches ? 30.18 : 80.7} marginLeft="1%" marginRight="1%" placeholder={"Item"}/>
     </>
       
 )}
