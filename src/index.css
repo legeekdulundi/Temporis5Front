@@ -5,17 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap');
 
 html,body{
-font-family: 'Quicksand', sans-serif;
-}
-html{
-  background-color: #270B31;
+  font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
-  top: 0;
-  left: 0;
+  background-color: #270B31;
 }
 /*Maine Page*/
 .background{
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
 }
@@ -41,6 +37,8 @@ html{
   box-sizing: border-box;
   backdrop-filter: blur(7px);
   border-radius: 35px;
+  display: block;
+  overflow: auto;
 }
 .logo{
   position :absolute;
@@ -453,6 +451,7 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
 
 
 @media only screen and (max-width: 600px) {
+  
   .Menu{
     margin:0;
     padding: 0;
@@ -474,7 +473,7 @@ ul[data-class="RechercheItemScrollBar-Home"]::-webkit-scrollbar-thumb {
     margin :0.5% 0% 0% 10%;
   }
   .flex-clounm-center{
-    margin-top: 35%;
+    margin-top: 25%;
   }
   .button-menu{
     font-size: 8vw;

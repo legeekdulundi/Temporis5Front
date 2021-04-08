@@ -93,15 +93,6 @@ const VerticalNavBarre = (props) => {
                         <input id="ButtonRecherche" onClick={OnClickListenRecherche} className="input-button" type="submit" value={"Rechercher"} style={{width:"34%"}}/>
                     </div>
                 </div>
-                {/* <input className="input" id="input-add-craft" placeholder="Recherche carte" style={{"margin-bottom" : "25%"}}/> */}
-                {/* <div style={{"display": "flex", "flexDirection": "column"}}>
-                    <h1 className="titre-verticalNav">Ajout Carte</h1>
-                    <div style={{display:"flex"}}>
-                        <InputCarte key={IdInput} id={"InputAddCarte2"} subclass={"RechercheItemScrollBar-Vertical"} useStyles={useStyles()} Data={props.ListeCarte} width="60%" widthList={60-1.3} 
-                         marginLeft="1%" marginRight="10%" placeholder=" carte"/>
-                        <input id="ButtonAjout" onClick={OnClickListen} className="input-button" type="submit"  value={"Ajouter"}/>
-                    </div>
-                </div> */}
             </div>
             <div style={{display:"flex", "flexDirection":"column", "marginLeft":"44%"}}>
             <div style={{display:"flex", "flexDirection":"row"}}>

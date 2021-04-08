@@ -1,11 +1,13 @@
 import InputCarte from "./InputAutoComplete"
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+
+const Recherche = (props) => {
+  const useStyles = makeStyles((theme) => ({
     input:{
         width: "100%",
-        maxHeight:'35px',
-        fontSize:"28px",
+        maxHeight:props.matches ? '35px' : "27px",
+        fontSize:props.matches ? "28px" : "21px",
         outline:"none",
         borderRadius: "15px",
         border: "none",
@@ -29,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-const Recherche = (props) => {
   var useStyless=useStyles()
       return (
         <>
@@ -37,19 +38,19 @@ const Recherche = (props) => {
           <div className="operator-style-Home" >=</div>
           
           <div className="NewCraftContenaire">
-            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79}  marginLeft="1%" marginRight="1%"
+            <InputCarte  id={"CarteRecette"+1} useStyles={useStyless}  width={props.matches ? "20%" : "100%"} widthList={props.matches ? 16.75 : 79}  marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte1} />
             <div className="operator-style-Home" >+</div>
-            <InputCarte id={"CarteRecette"+2} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
+            <InputCarte id={"CarteRecette"+2} useStyles={useStyless}  width={props.matches ? "20%" : "100%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte2}  />
             <div className="operator-style-Home" >+</div>
-            <InputCarte id={"CarteRecette"+3} useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%"
+            <InputCarte id={"CarteRecette"+3} useStyles={useStyless}  width={props.matches ? "20%" : "100%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%"
              disabled="disabled" placeholder={props.Recette.carte3} />
             <div className="operator-style-Home" >+</div>
-            <InputCarte id={"CarteRecette"+4}useStyles={useStyless}  width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
+            <InputCarte id={"CarteRecette"+4}useStyles={useStyless}  width={props.matches ? "20%" : "100%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte4} />
             <div className="operator-style-Home" >+</div>
-            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} width={props.matches ? "20%" : "80%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
+            <InputCarte id={"CarteRecette"+5} useStyles={useStyless} width={props.matches ? "20%" : "100%"} widthList={props.matches ? 16.75 : 79} marginLeft="1%" marginRight="1%" 
             disabled="disabled" placeholder={props.Recette.carte5}  />
           </div>
         </>
