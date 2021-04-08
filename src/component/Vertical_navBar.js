@@ -64,13 +64,17 @@ const VerticalNavBarre = (props) => {
     const audio = document.getElementById("RedSong");
     audio.currentTime = 0;
   }
+  function NormalizeString(Param)
+  {
+    return Param.replaceAll(' ','_').normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
 
   function OnClickListenRecherche()
   {
     if(document.getElementById("InputAddCarte1") && document.getElementById("InputAddCarte1").value)
     {
       console.log(document.getElementById("InputAddCarte1").value)
-       props.GetRecetteWithCarte({"name":document.getElementById("InputAddCarte1").value,"NivCarte":""})
+       props.GetRecetteWithCarte({"name":NormalizeString(document.getElementById("InputAddCarte1").value),"NivCarte":""})
       // props.AddCarte({"name":document.getElementById("InputAddCarte2").value,"nivCarte":""})
       // document.getElementById("InputAddCarte2").value=null;
       setIdInputRecherche(IdInputRecherche+1)

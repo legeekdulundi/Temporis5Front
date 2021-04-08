@@ -9,11 +9,8 @@ font-family: 'Quicksand', sans-serif;
 }
 html{
   background-color: #270B31;
-  /* position: fixed; */
   overflow-x: hidden;
   top: 0;
-  /* right: 0;
-  bottom: 0; */
   left: 0;
 }
 /*Maine Page*/
