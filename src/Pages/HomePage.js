@@ -17,7 +17,8 @@ function HomePage(props) {
     if(props.Status===400 || props.Status===500)
     {
       setson(props.lienBack + "/GetSong/"+NbrRequest)
-      document.getElementById("AudioDiv").load()
+      if (document.getElementById("AudioDiv"))
+        document.getElementById("AudioDiv").load()
       setNbrRequest(NbrRequest+1)
       console.log(NbrRequest)
       // document.getElementsByClassName("audio-element")
