@@ -23,8 +23,12 @@ function HomePage(props) {
       console.log(NbrRequest)
       // document.getElementsByClassName("audio-element")
       const audioEl = document.getElementById("AudioDiv")
-      audioEl.pause()
-      audioEl.play()
+      
+      if(audioEl.paused)
+      {
+        audioEl.pause()
+        audioEl.play()
+      }
       if(props.RequestStatusFrom!=="/GetCraft")
         document.getElementById("btnCraft").classList.add('Shake-button')
       else

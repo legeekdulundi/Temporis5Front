@@ -42,22 +42,14 @@ const VerticalNavBarre = (props) => {
 
 
   const [IdInputRecherche, setIdInputRecherche] = useState(100);
-  const [RedkSong, setRedkSong] = useState(false);
 
-  function SongPlay(){
-    setRedkSong(!RedkSong);
-  }
 
-  function PlaySong(Play){
+  function PlaySong(){
     const audio = document.getElementById("RedSong");
-    if (Play){
-      if(audio)
-        audio.play();
-    }
-    else{
-      if (audio)
-        audio.pause();
-    };
+    if(audio?.paused)
+      audio.play();
+    else if(audio)
+      audio.pause();
   }
 
   function RestartSong(){
@@ -97,13 +89,10 @@ const VerticalNavBarre = (props) => {
             <div style={{display:"flex", "flexDirection":"column", "marginLeft":"44%"}}>
             <div style={{display:"flex", "flexDirection":"row"}}>
                 <a className="title-producteure" target="blank" href="https://www.twitch.tv/redklebg/clip/VivaciousGenerousTruffleKlappa?filter=clips&range=all&sort=time ">Design By RedK</a>
-                <h1 className="song" target="blank" onClick={SongPlay} onDoubleClick={RestartSong} >♫</h1>
+                <h1 className="song" target="blank" onClick={PlaySong} onDoubleClick={RestartSong} >♫</h1>
                 <audio id="RedSong">
                     <source src="http://localhost:8888/GetSongRedkBebe/" ></source>
                 </audio>
-                {
-                  PlaySong(RedkSong) 
-                }
               </div>
               <a className="title-producteure" target="blank" href="https://www.google.com/search?q=BEAU+GOSSE&sxsrf=ALeKk03ZNaa3qMiG8qIZCbe6u5mA6-kaMQ:1617558689236&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiwz8zYk-XvAhUM8BoKHcWaBdcQ_AUoAXoECAEQAw&cshid=1617558761117586&biw=1920&bih=937#imgrc=fIuhv4X4aG4xoM">Code By LeGeek du Lundi</a>
             </div>

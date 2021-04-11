@@ -9,13 +9,8 @@ export default function UseAutocomplete(props) {
     options: props.Data,
     getOptionLabel: (option) => option.name,
     clearOnBlur:false,
-    
   });
-  function FocusFct(e){if(e)
-    {
-      e.target.style.borderRadius="10px 10px 0 0";
-      e.target.value=''
-  }}   
+  function FocusFct(e){if(e){e.target.style.borderRadius="10px 10px 0 0";}}   
   function BlurFct(e){if(e)e.target.style.borderRadius="15px";}
   return (
     <div style={{width:parseInt(props.width)+"%", marginLeft:props.marginLeft , marginRight:props.marginRight}} onBlur={BlurFct}>
@@ -26,7 +21,6 @@ export default function UseAutocomplete(props) {
         :
         <div {...getRootProps()}>
           {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled} />}
-          {/* {<input key={props.id}  className={classes.input} {...getInputProps()} onFocus={FocusFct} placeholder={props.placeholder} disabled={props.disabled}/>} */}
         </div>
       }
       {groupedOptions.length > 0 ? (
