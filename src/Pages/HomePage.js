@@ -11,7 +11,7 @@ function HomePage(props) {
   const [ShowVideo, setShowVideo] = useState(true)
   const [NbrRequest, setNbrRequest] = useState(10)
 
-  const [son, setson] = useState("http://167.172.176.232:8888/GetSong/1")
+  const [son, setson] = useState("http://localhost:8888/GetSong/1")
   
   useEffect(() => {
     if(props.Status===400 || props.Status===500)

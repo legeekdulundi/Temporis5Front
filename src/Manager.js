@@ -14,7 +14,7 @@ function Manager() {
   const [ListeRecette, setListeRecette] = useState([]);
   const [NbrRequest, setNbrRequest] = useState(0);
 
-  const [LienBack] = useState('http://167.172.176.232:8888');
+  const [LienBack] = useState('http://localhost:8888');
 
   const mediaMatch = window.matchMedia('(min-width: 600px)');
   const [matches] = useState(mediaMatch.matches);

@@ -99,7 +99,7 @@ const VerticalNavBarre = (props) => {
                 <a className="title-producteure" target="blank" href="https://www.twitch.tv/redklebg/clip/VivaciousGenerousTruffleKlappa?filter=clips&range=all&sort=time ">Design By RedK</a>
                 <h1 className="song" target="blank" onClick={SongPlay} onDoubleClick={RestartSong} >♫</h1>
                 <audio id="RedSong">
-                    <source src="http://167.172.176.232:8888/GetSongRedkBebe/" ></source>
+                    <source src="http://localhost:8888/GetSongRedkBebe/" ></source>
                 </audio>
                 {
                   PlaySong(RedkSong) 
