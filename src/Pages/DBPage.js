@@ -5,7 +5,7 @@ const DBPage = (props) => {
     return (
         <>
             <VerticalNavBarre ListeCarte={props.ListeCarte} AddCarte={props.AddCarte} GetRecetteWithCarte={props.GetRecetteWithCarte}/>
-            <ContainerRecette ListeCarte={props.ListeCarte} ListItem={props.ListItem} 
+            <ContainerRecette ListeCarte={props.ListeCarte} ListItem={props.ListeItemsKnow} 
             ListeRecette={props.ListeRecette} GetRecetteWithItem={props.GetRecetteWithItem} DeleteItem={props.DeleteItem} ModifItem={props.ModifItem} matches={props.matches}/> 
         </>
     )

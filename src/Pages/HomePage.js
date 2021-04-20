@@ -124,7 +124,7 @@ function HomePage(props) {
                 {showAddCraft ? <FormulaireNewCraft ListItem={props.ListItem} ListeCarte={props.ListeCarte} matches={props.matches}/> : HideAddCraft()}
                 <button id="btnCraft" className="button-menu button-craft" onClick={ShowCraftMenu} >{ValueCraftButton}</button>
                 <button id="btnRecherche" className="button-menu button-recherche" onClick={ShowRechercheMenu}>Recherche</button>
-                {showRecherche && <Recherche Recette={props.Recette} ListItem={props.ListItem} matches={props.matches} />}
+                {showRecherche && <Recherche Recette={props.Recette} ListItem={props.ListeItemsKnow} matches={props.matches} />}
                 <Link  onClick={RefreshPage} to="/BDP" className="button-menu button-Base-donner" >Base de donnée</Link>
               </div>
             </menu> 

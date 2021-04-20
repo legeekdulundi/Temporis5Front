@@ -7,6 +7,7 @@ import {  BrowserRouter as Router, Switch, Route,} from "react-router-dom";
 function Manager() {
   const [RecetteRecherche, setRecetteRecherche] = useState([]);
   const [ListItem, setListItem] = useState([]);
+  const [ListeItemsKnow, setListItemKnow] = useState([]);
   const [ListeCarte, setListeCarte] = useState([]);
   
   const [RequestStatus, setRequestStatus] = useState(0);
@@ -24,6 +25,7 @@ function Manager() {
     GetListItem()
     GetListCarte()
     GetListeRecette("/GetNewCraft/");
+    GetItemsKnow();
   }, [])
   async function GetListItem()
   {
@@ -164,6 +166,21 @@ function Manager() {
           GetListeRecette("/GetNewCraft/");
       });
   }
+
+  async function GetItemsKnow()
+  {
+    fetch(LienBack + '/GetItemsCraft/', {
+      method: 'post',
+      headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'},
+    }).then(res=>res.json())
+    .then(function(res){
+      // res.items.
+      res.LitseItems.forEach(element => {
+        element.name=element.name.replaceAll('_',' ')
+      });
+      setListItemKnow(res.LitseItems)
+    });
+  }
   
   const [son, setson] = useState(LienBack + "/GetSong/1")
   const [count, setCount] = useState(0);
@@ -206,11 +223,11 @@ function Manager() {
       <Switch> 
         <Route exact path="/">
             <HomePage NewCraft={NewCraft} NbrRequest={NbrRequest} ResetStatus={ResetStatus} Rechercherecette={Rechercherecette} 
-            Recette={RecetteRecherche} ListItem={ListItem} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} matches={matches}
+            Recette={RecetteRecherche} ListItem={ListItem} ListeItemsKnow={ListeItemsKnow} ListeCarte={ListeCarte} RefreshPage={GetListeRecette}  Status={RequestStatus} matches={matches}
             RequestStatusFrom={RequestStatusFrom} lienBack={LienBack}/>
         </Route>
         <Route exact path="/BDP">
-            <DBPage ListItem={ListItem} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
+            <DBPage ListItem={ListItem} ListeItemsKnow={ListeItemsKnow} ListeCarte={ListeCarte} ListeRecette={ListeRecette} GetRecetteWithItem={GetRecetteWithItem}
             GetRecetteWithCarte={GetRecetteWithCarte} DeleteItem={DeleteItem} ModifItem={ModifItem} matches={matches}/>
         </Route>
       </Switch>
